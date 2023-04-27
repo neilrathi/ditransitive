@@ -1,0 +1,44 @@
+var states = [{string: "teacher student book"},
+               {string: "teacher student dog"}]
+
+// set of utterances
+var utterances = ["student", "dog", "book"]
+
+// prior over world states
+var objectPrior = function() {
+  var obj = uniformDraw(states)
+  return obj.string 
+}
+
+var cost = function(utt) {
+  return 0
+}
+
+// meaning function to interpret the utterances
+var meaning = function(utterance, obj){
+  _.includes(obj, utterance)
+}
+
+// literal listener
+var literalListener = function(utterance){
+  Infer({model: function(){
+    var obj = objectPrior();
+    var uttTruthVal = meaning(utterance, obj);
+    condition(uttTruthVal == true)
+    return obj
+  }})
+}
+
+// set speaker optimality
+var alpha = 1
+
+// pragmatic speaker
+var speaker = function(obj){
+  Infer({model: function(){
+    var utterance = uniformDraw(utterances)
+    factor(alpha * (literalListener(utterance).score(obj) - cost(utterance)))
+    return utterance
+  }})
+}
+
+speaker("teacher student book")
