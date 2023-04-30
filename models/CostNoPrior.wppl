@@ -1,8 +1,8 @@
-var states = [{string: "teacher DoubleObject IndirectObject"},
-               {string: "teacher DoubleObject Alternative"}]
+var states = [{string: "teacher student book"},
+               {string: "teacher student dog"}]
 
 // set of utterances
-var utterances = ["DoubleObject", "Alternative", "IndirectObject"]
+var utterances = ["student", "book", "dog"]
 
 // prior over world states
 var objectPrior = function() {
@@ -10,8 +10,12 @@ var objectPrior = function() {
   return obj.string 
 }
 
-var cost = function(utt) {
-  return 0
+var cost = function(utt){
+  utt == "book" ? 0.19318181818181818 :
+  utt == "student" ? 0.21536796536796535 :
+  utt == "television" ? 0.22781385281385283 :
+  utt == "anteater" ? 0.36363636363636365 :
+  0
 }
 
 // meaning function to interpret the utterances
@@ -41,4 +45,4 @@ var speaker = function(obj){
   }})
 }
 
-speaker("teacher DoubleObject IndirectObject")
+speaker("teacher student book")

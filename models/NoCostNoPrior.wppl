@@ -2,7 +2,7 @@ var states = [{string: "teacher DoubleObject IndirectObject"},
                {string: "teacher DoubleObject Alternative"}]
 
 // set of utterances
-var utterances = ["DoubleObject", "Alternative", "IndirectObject"]
+var utterances = ["DoubleObject", "IndirectObject", "Alternative"]
 
 // prior over world states
 var objectPrior = function() {

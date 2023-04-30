@@ -46,4 +46,4 @@ for (name in names(data)) {
 # Combine all ggplot objects into a single plot using grid.arrange()
 g <- arrangeGrob(grobs = plot_list)
 
-ggsave("plots/probabilities.pdf", g, width=6, height=6, units = "in", dpi = 300)
+ggsave("plots/probabilities_likely.pdf", g, width=6, height=6, units = "in", dpi = 300)
