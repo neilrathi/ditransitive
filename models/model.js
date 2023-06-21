@@ -1,7 +1,7 @@
 var target = "teacher student book"
 
 // how informative is the alternation?
-var informativity = 'low'
+var informativity = dataFromR[0].informativity
 var numstates = informativity == 'high' ? 6 :
                 informativity == 'med' ? 4 :
                 informativity == 'low' ? 2 : 1
@@ -11,9 +11,11 @@ var alternation = 'R'
 
 // cost?
 var useCost = true
+var recipientcost = dataFromR[0].recipientcost
 
 // priors?
-var usePriors = false
+var usePriors = true
+var recipientprior = dataFromR[0].recipientprior
 
 // generate all alternative states
 var toDict = function(x){ return {string: x} }
@@ -53,13 +55,13 @@ var objectPrior = function() {
 }
 
 var cost = function(utt){
-  useCost ? (utt == "book" ? 0.9 :
-  utt == "student" ? 0.05 : 0) : 0
+  useCost ? (utt == "book" ? recipientcost :
+  utt == "student" ? 0.25 : 0) : 0
 }
 
 var prior = function(utt){
-  usePriors ? (utt == "book" ? 0.005244758 :
-  utt == "student" ? 0.032899216 : 0) : 0
+  usePriors ? (utt == "book" ? recipientprior :
+  utt == "student" ? 0.25 : 0) : 0
 }
 
 // meaning function to interpret the utterances
@@ -101,4 +103,4 @@ var getProbs = function(obj, utt1, utt2) {
   return [a/(a+b), b/(a+b)]
 }
 
-viz.bar(['DO', 'PD'], getProbs('teacher student book', 'book', 'student'))
+getProbs('teacher student book', 'book', 'student')
