@@ -26,6 +26,7 @@ for verb in all_verbs:
             for recipient in normal_recipients:
                 recipient_file = f'../characters/recipient/{recipient}'
                 images = [Image.open(x) for x in [recipient_file, agent_file]]
+
                 widths, heights = zip(*(i.size for i in images))
 
                 total_width = sum(widths)
@@ -47,6 +48,7 @@ for verb in all_verbs:
             for recipient in sell_recipients:
                 recipient_file = f'../characters/recipient/{recipient}'
                 images = [Image.open(x) for x in [recipient_file, agent_file]]
+
                 widths, heights = zip(*(i.size for i in images))
 
                 total_width = sum(widths)
