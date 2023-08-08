@@ -15,27 +15,49 @@ for recipient_file in os.listdir('../characters/recipient/'):
             if v != 'sell':
                 recipients[v].append(Image.open(f'../characters/recipient/{recipient_file}'))
 
+def make_or_append(d, k, v):
+    if k not in d:
+        d[k] = [v]
+    else:
+        d[k].append(v)
+
 def make_grid(verb, informativity):
-    agents = []
+    all_agents = {}
 
     for agent_file in os.listdir(f'../characters/{verb}/'):
         if not agent_file.endswith('.png'):
             continue
-        agents.append(Image.open(f'../characters/{verb}/{agent_file}'))
+        make_or_append(all_agents, agent_file.split('-')[0], agent_file)
+
+    themes = []
 
     if informativity == 'control':
-        scene_agents = random.sample(agents, 4)
+        agent_themes = all_agents[max(all_agents, key = lambda x : len(all_agents[x]))]
+
+        for theme in agent_themes:
+            themes.append(Image.open(f'../characters/{verb}/{theme}'))
+
         scene_recipients = random.sample(recipients[verb], 4)
 
-    if informativity == 'low':
-        scene_agents = 2 * random.sample(agents, 2)
-        scene_recipients = random.sample(recipients[verb], 4)
+        random.shuffle(themes)
+        scene_list = [[r, t] for t, r in zip(themes, scene_recipients)]
 
-    if informativity == 'high':
-        scene_agents = 4 * random.sample(agents, 1)
-        scene_recipients = random.sample(recipients[verb], 4)
+    else:
+        agent_themes = all_agents[random.choice(list(all_agents.keys()))]
 
-    scene_list = zip(scene_recipients, scene_agents)
+        for theme in agent_themes:
+            themes.append(Image.open(f'../characters/{verb}/{theme}'))
+
+        if informativity == 'low':
+            scene_themes = random.sample(themes, 2)
+            scene_recipients = random.sample(recipients[verb], 2)
+
+        if informativity == 'high':
+            scene_themes = random.sample(themes, 1)
+            scene_recipients = random.sample(recipients[verb], 4)
+
+        scene_list = [[r, t] for t in scene_themes for r in scene_recipients]
+
     scene = []
 
     for images in scene_list:
