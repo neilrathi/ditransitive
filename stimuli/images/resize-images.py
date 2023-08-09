@@ -1,5 +1,6 @@
 import sys, argparse, os
 from PIL import Image
+import pandas as pd
 
 allfiles = []
 all_verbs = ['transitive', 'intransitive']
@@ -24,10 +25,15 @@ def make_square(img, min_size = 360, background_color = (255, 255, 255)):
 for verb in all_verbs:
     for img in os.listdir(f'../characters/{verb}/'):
         if img.endswith('.jpg'):
-            allfiles.append(f'../characters/{verb}/{img}')
+            allfiles.append((f'../characters/{verb}/{img}', verb))
 
-images = [[Image.open(x), x] for x in allfiles]
+images = [[Image.open(x), x, y] for x, y in allfiles]
+
+info = pd.read_csv('stim_info.csv')
+print(info.head(5))
 
 for img in images:
     im = make_square(img[0])
-    im.save(img[1])
+    row = info.loc[info['filename'] == img[1].split('/')[-1]].squeeze().tolist()
+    # print(f'../characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}')
+    im.save(f'../characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}.jpg')
