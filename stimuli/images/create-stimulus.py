@@ -21,6 +21,56 @@ def make_or_append(d, k, v):
     else:
         d[k].append(v)
 
+def create_grid(scene, padding = 20):
+    max_width = max(image.width for image in scene)
+    max_height = max(image.height for image in scene)
+
+    for j, image in enumerate(scene):
+        scene[j] = image.resize((max_width, max_height), Image.Resampling.LANCZOS)
+
+    grid = Image.new("RGB", (4 * padding + 2 * max_width + 1, 4 * padding + 2 * max_height + 1), 'white')
+
+    x = 0
+    y = 0
+
+    for image in scene:
+        grid.paste(image, (x + padding, y + padding))
+        x += max_width + 2 * padding + 1
+        if x >= grid.width:
+            x = 0
+            y += max_height + 2 * padding + 1
+
+    return grid
+
+def draw_lines(grid, padding = 20, verb = '', text = False):
+    if text == True:
+        text_grid = Image.new(grid.mode, (grid.width, grid.height + 106), (255, 255, 255))
+        text_grid.paste(grid, (0, 0))
+
+        draw = ImageDraw.Draw(text_grid)
+        draw.line([(grid.width // 2, padding), (grid.width // 2, grid.height - padding)], fill=(0, 0, 0), width=1)
+        draw.line([(padding, grid.height // 2), (grid.width - padding, grid.height // 2)], fill=(0, 0, 0), width=1)
+        draw.line([(0, grid.height + 5), (text_grid.width, grid.height + 5)], fill=(0, 0, 0), width=1)
+
+        font = ImageFont.truetype("/Library/Fonts/Canela-Light-Trial.otf", 50)
+
+        text_bbox = draw.textbbox((0, 0), verb, font=font)
+        x = (text_grid.width - text_bbox[2]) // 2
+        y = grid.height + (106 - text_bbox[3]) // 2
+
+        draw.text((x, y), verb, font=font, fill=(0, 0, 0))
+
+    else:
+        text_grid = Image.new(grid.mode, (grid.width, grid.height), (255, 255, 255))
+        text_grid.paste(grid, (0, 0))
+
+        draw = ImageDraw.Draw(text_grid)
+        draw.line([(grid.width // 2, padding), (grid.width // 2, grid.height - padding)], fill=(0, 0, 0), width=1)
+        draw.line([(padding, grid.height // 2), (grid.width - padding, grid.height // 2)], fill=(0, 0, 0), width=1)
+        draw.line([(0, grid.height + 5), (text_grid.width, grid.height + 5)], fill=(0, 0, 0), width=1)
+
+    return text_grid
+
 def make_grid(verb, informativity):
     all_agents = {}
 
@@ -74,7 +124,25 @@ def make_grid(verb, informativity):
 
         scene.append(new_img)
 
-    # randomly select target image
+    # scene = [img, img, img, img]
+    random.shuffle(scene)
+
+    listener_grid = create_grid(scene)
+
+    random.shuffle(scene)
+
+    target = random.randrange(4)
+    scene[target] = ImageOps.expand(scene[target], border=5, fill='red')
+
+    speaker_grid = create_grid(scene)
+
+    speaker = draw_lines(speaker_grid, verb = verb, text = True)
+    listener = draw_lines(listener_grid)
+
+    speaker.save(f'{verb}/speaker/{informativity}.pdf')
+    listener.save(f'{verb}/listener/{informativity}.pdf')
+
+    """# randomly select target image
     target = random.randrange(4)
     scene[target] = ImageOps.expand(scene[target], border=5, fill='red')
     random.shuffle(scene)
@@ -113,7 +181,7 @@ def make_grid(verb, informativity):
     y = grid.height + (106 - text_bbox[3]) // 2
 
     draw.text((x, y), verb, font=font, fill=(0, 0, 0))
-    text_grid.save(f'{verb}/{informativity}.pdf')
+    text_grid.save(f'{verb}/{informativity}.pdf')"""
 
 for verb in verbs:
     for informativity in informativities:
