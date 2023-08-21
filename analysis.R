@@ -31,19 +31,13 @@ combined_df$prob <- as.numeric(combined_df$prob)
 combined_df$informativity <- factor(combined_df$informativity)
 
 ggplot(combined_df, aes(x = prior, y = cost, fill = prob)) +
-  geom_tile() +
+  geom_ti() +
   scale_fill_viridis() +
   labs(x = "prior probability of recipient", y = "cost of recipient", fill = "probability") +
   facet_wrap(~factor(informativity, levels=c('low', 'med', 'high')))
 
-ggplot(combined_df, aes(x = cost, y = prob)) +
+ggplot(combined_df, aes(x = prior, y = prob)) +
   geom_bar(stat = 'identity') +
-  ylim(0, 1) +
-  facet_wrap(~factor(informativity, levels=c('low', 'med', 'high')))
-
-ggplot(combined_df, aes(x = cost, y = prob)) +
-  geom_bar(stat = 'identity') +
-  ylim(0, 1) +
   facet_wrap(~factor(informativity, levels=c('low', 'med', 'high')))
 
 for (df in dfs) {

@@ -80,7 +80,7 @@ var literalListener = function(utterance){
 }
 
 // set speaker optimality
-var alpha = 1
+var alpha = 5
 
 var util = function(utterance, obj) {
   alpha * (literalListener(utterance).score(obj) - cost(utterance))
