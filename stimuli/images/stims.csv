@@ -1,0 +1,16 @@
+trialid,images,target
+1,"pirate-give-apple-diver,pirate-give-banana-sailor,pirate-give-ball-skater,pirate-give-cake-clown",pirate-give-cake-clown
+2,"chef-give-jug-sailor,chef-give-jug-diver,chef-give-ball-sailor,chef-give-ball-diver",chef-give-ball-diver
+3,"pirate-give-banana-boxer,pirate-give-banana-skater,pirate-give-banana-sailor,pirate-give-banana-diver",pirate-give-banana-diver
+4,"artist-offer-ball-clown,artist-offer-hat-diver,artist-offer-book-skater,artist-offer-apple-doctor",artist-offer-book-skater
+5,"cowboy-offer-banana-diver,cowboy-offer-banana-sailor,cowboy-offer-cake-diver,cowboy-offer-cake-sailor",cowboy-offer-banana-sailor
+6,"artist-offer-ball-diver,artist-offer-ball-doctor,artist-offer-ball-sailor,artist-offer-ball-monk",artist-offer-ball-sailor
+7,"ballerina-throw-hat-clown,ballerina-throw-banana-skater,ballerina-throw-cake-sailor,ballerina-throw-book-doctor",ballerina-throw-book-doctor
+8,"cowboy-throw-gun-sailor,cowboy-throw-gun-skater,cowboy-throw-book-sailor,cowboy-throw-book-skater",cowboy-throw-book-skater
+9,"cowboy-throw-book-clown,cowboy-throw-book-skater,cowboy-throw-book-monk,cowboy-throw-book-doctor",cowboy-throw-book-monk
+10,"waitress-show-ball-skater,waitress-show-banana-sailor,waitress-show-apple-boxer,waitress-show-glass-monk",waitress-show-banana-sailor
+11,"pirate-show-book-clown,pirate-show-book-sailor,pirate-show-hat-clown,pirate-show-hat-sailor",pirate-show-hat-clown
+12,"waitress-show-apple-clown,waitress-show-apple-doctor,waitress-show-apple-diver,waitress-show-apple-monk",waitress-show-apple-diver
+13,"chef-sell-book-clown,chef-sell-glass-ballerina,chef-sell-cake-sailor,chef-sell-hat-doctor",chef-sell-book-clown
+14,"chef-sell-cake-ballerina,chef-sell-cake-doctor,chef-sell-glass-ballerina,chef-sell-glass-doctor",chef-sell-cake-ballerina
+15,"ballerina-sell-apple-ballerina,ballerina-sell-apple-doctor,ballerina-sell-apple-sailor,ballerina-sell-apple-clown",ballerina-sell-apple-sailor
