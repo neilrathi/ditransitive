@@ -1,0 +1,29 @@
+images,target,verb,informativity
+"pirate-give-apple-boxer,pirate-give-banana-sailor,pirate-give-ball-skater,pirate-give-cake-clown",pirate-give-apple-boxer,give,control
+"pirate-give-apple-boxer,pirate-give-apple-skater,pirate-give-banana-boxer,pirate-give-banana-skater",pirate-give-apple-boxer,give,low
+"pirate-give-cake-clown,pirate-give-cake-monk,pirate-give-cake-diver,pirate-give-cake-boxer",pirate-give-cake-clown,give,high
+"artist-offer-hat-doctor,artist-offer-ball-sailor,artist-offer-apple-boxer,artist-offer-book-skater",artist-offer-hat-doctor,offer,control
+"artist-offer-ball-doctor,artist-offer-ball-monk,artist-offer-book-doctor,artist-offer-book-monk",artist-offer-ball-doctor,offer,low
+"cowboy-offer-banana-monk,cowboy-offer-banana-boxer,cowboy-offer-banana-skater,cowboy-offer-banana-doctor",cowboy-offer-banana-monk,offer,high
+"ballerina-throw-cake-monk,ballerina-throw-banana-skater,ballerina-throw-book-boxer,ballerina-throw-hat-diver",ballerina-throw-cake-monk,throw,control
+"cowboy-throw-gun-monk,cowboy-throw-gun-doctor,cowboy-throw-book-monk,cowboy-throw-book-doctor",cowboy-throw-gun-monk,throw,low
+"ballerina-throw-banana-diver,ballerina-throw-banana-doctor,ballerina-throw-banana-monk,ballerina-throw-banana-clown",ballerina-throw-banana-diver,throw,high
+"waitress-show-apple-boxer,waitress-show-glass-skater,waitress-show-ball-diver,waitress-show-banana-monk",waitress-show-apple-boxer,show,control
+"pirate-show-hat-diver,pirate-show-hat-sailor,pirate-show-book-diver,pirate-show-book-sailor",pirate-show-hat-diver,show,low
+"waitress-show-glass-skater,waitress-show-glass-sailor,waitress-show-glass-boxer,waitress-show-glass-doctor",waitress-show-glass-skater,show,high
+"chef-sell-cake-clown,chef-sell-glass-sailor,chef-sell-hat-ballerina,chef-sell-book-doctor",chef-sell-cake-clown,sell,control
+"pirate-sell-cake-clown,pirate-sell-cake-doctor,pirate-sell-ball-clown,pirate-sell-ball-doctor",pirate-sell-cake-clown,sell,low
+"chef-sell-book-sailor,chef-sell-book-ballerina,chef-sell-book-doctor,chef-sell-book-clown",chef-sell-book-sailor,sell,high
+"chef-burn-hat,cowboy-drag-jug,pirate-bounce-ball,waitress-kiss-swimmer",chef-burn-hat,burn,filler
+"doctor-dance-cowboy,chef-cut-banana,pirate-smile-clown,chef-step (on)-soldier",doctor-dance-cowboy,dance,filler
+"waitress-run-soldier,ballerina-yell-swimmer,waitress-peel-banana,artist-examine-apple",waitress-run-soldier,run,filler
+"pirate-wink-sailor,chef-tickle-burglar,artist-sniff-cup,cowboy-carry-knife",pirate-wink-sailor,wink,filler
+"artist-reach (for)-cup,artist-drink-cup,artist-sniff-apple,ballerina-hug-sailor",artist-reach (for)-cup,reach (for),filler
+"chef-fight-sailor,ballerina-attack-monk,waitress-touch-swimmer,chef-laugh (at)-burglar",chef-fight-sailor,fight,filler
+"pirate-shake-jug,pirate-drop-book,ballerina-bite-apple,chef-decorate-cake",pirate-shake-jug,shake,filler
+"cowboy-toss-apple,cowboy-kick-soldier,pirate-clean-ball,ballerina-pick up-boxer",cowboy-toss-apple,toss,filler
+"pirate-slap-sailor,waitress-drop-banana,cowboy-poke-monk,monk-chase-ballerina",pirate-slap-sailor,slap,filler
+"chef-cut-cake,artist-wash-ball,waitress-open-book,waitress-catch-doctor",chef-cut-cake,cut,filler
+"cowboy-toss-ball,ballerina-wash-gun,artist-wash-jug,artist-spill-cup",cowboy-toss-ball,toss,filler
+"ballerina-trip-boxer,artist-elbow-doctor,ballerina-bump (into)-cake,chef-point (at)-clown",ballerina-trip-boxer,trip,filler
+"cowboy-take off-hat,pirate-eat-banana,artist-examine-palette,cowboy-carry-swimmer",cowboy-take off-hat,take off,filler

@@ -3,9 +3,15 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 import random
 
 import csv
+import itertools
 
 verbs = ['give', 'offer', 'throw', 'show', 'sell']
 informativities = ['control', 'low', 'high']
+
+all_conditions = [list(cond) for cond in itertools.permutations(informativities, 3)]
+conditions = []
+for cond in all_conditions:
+    conditions.append((cond[0], cond[0], cond[1], cond[1], cond[2]))
 
 recipients = {v : [] for v in verbs}
 
@@ -25,7 +31,8 @@ def make_or_append(d, k, v):
     else:
         d[k].append(v)
 
-def make_grid(verb, informativity):
+# creates grid of four images for TEST condition (i.e. ditransitive)
+def make_test_grid(verb, informativity):
     all_agents = {}
 
     for agent_file in os.listdir(f'../characters/{verb}/'):
@@ -80,7 +87,8 @@ def make_grid(verb, informativity):
             new_img.paste(img, (x_offset, 0))
             x_offset += img.size[0]
 
-        scene.append((new_img, labels[i]))
+        flipped = ImageOps.mirror(new_img)
+        scene.append((flipped, labels[i]))
 
     # scene = [img, img, img, img]
     random.shuffle(scene)
@@ -88,16 +96,100 @@ def make_grid(verb, informativity):
     for img in scene:
         img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
 
-    return labels
+    return (labels, verb, informativity)
 
-with open('../../experiment/server/src/samplestims.csv', 'w') as f:
+def make_intransitive_grid():
+    intransitives = []
+
+    for file in os.listdir(f'../characters/intransitive/'):
+        if not file.endswith('.jpg'):
+            continue
+        intransitives.append([Image.open(f'../characters/intransitive/{file}'), file[:-4]])
+
+    # all of the non-target images (transitive distractors + a couple intransitives)
+    distractors = []
+    for file in os.listdir(f'../characters/intransitive/distractors/'):
+        if not file.endswith('.jpg'):
+            continue
+        distractors.append([Image.open(f'../characters/intransitive/distractors/{file}'), file[:-4]])
+
+    images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(6)] # randomly select 6 images to use
+    distractors.extend(intransitives) # add other images to distractors
+    random.shuffle(distractors) # shuffle !
+    
+    # a scene consists of a target image + 3 distractors
+    all_scenes = [[images[i]] + distractors[i * 3 : (i + 1) * 3] for i in range(len(images))]
+
+    all_labels = []
+    for i, scene in enumerate(all_scenes):
+        verb = scene[0][1].split('-')[1]
+        all_labels.append(([x[1] for x in scene], verb, 'filler'))
+
+        for img in scene:
+            img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
+
+    return all_labels
+
+def make_transitive_grid():
+    images = []
+
+    for file in os.listdir(f'../characters/transitive/'):
+        if not file.endswith('.jpg'):
+            continue
+        images.append([Image.open(f'../characters/transitive/{file}'), file[:-4]])
+
+    random.shuffle(images)
+
+    all_scenes = [images[i * 4 : (i + 1) * 4] for i in range(len(images) // 4)]
+
+    all_labels = []
+    for i, scene in enumerate(all_scenes):
+        random.shuffle(scene)
+        verb = scene[0][1].split('-')[1]
+        all_labels.append(([x[1] for x in scene], verb, 'filler'))
+
+        for img in scene:
+            img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
+    
+    return all_labels
+
+with open('allstims.csv', 'w') as f:
     writer = csv.writer(f)
-    writer.writerow(['trialid', 'images', 'target', 'verb'])
-    i = 1
+    writer.writerow(['images', 'target', 'verb', 'informativity'])
+
+    all_labels = []
+
     for verb in verbs:
         for informativity in informativities:
-            labels = make_grid(verb, informativity)
-            writer.writerow([i, ','.join(labels), labels[random.randrange(4)], verb])
+            labels = make_test_grid(verb, informativity)
+            all_labels.append(labels)
+    
+    all_labels.extend(make_intransitive_grid())
+    all_labels.extend(make_transitive_grid())
+
+    for labels in all_labels:
+        writer.writerow([','.join(labels[0]), labels[0][0], labels[1], labels[2]])
+
+for cond in conditions:
+    condition_rows = []
+    with open('allstims.csv', 'r') as f:
+        reader = csv.reader(f)
+        cur_index = 0
+        for row in reader:
+            if row[3] == 'filler':
+                condition_rows.append(row)
+            if cur_index > 4:
+                continue
+            if row[2] == verbs[cur_index] and row[3] == cond[cur_index]:
+                condition_rows.append(row)
+                cur_index += 1
+    
+    random.shuffle(condition_rows)
+
+    with open(f'../../experiment/server/src/stims-{"".join([x[0] for x in cond])}.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(['trialid', 'images', 'target', 'verb', 'informativity'])
+        i = 1
+        for row in condition_rows:
+            writer.writerow([i] + row)
             i += 1
-
-
