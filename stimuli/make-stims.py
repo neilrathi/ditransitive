@@ -15,14 +15,14 @@ for cond in all_conditions:
 
 recipients = {v : [] for v in verbs}
 
-for recipient_file in os.listdir('../characters/recipient/'):
+for recipient_file in os.listdir('characters/recipient/'):
     if recipient_file.endswith('-sell.png'):
-        recipients['sell'].append((Image.open(f'../characters/recipient/{recipient_file}'),
+        recipients['sell'].append((Image.open(f'characters/recipient/{recipient_file}'),
                     recipient_file.split('-')[0]))
     elif recipient_file.endswith('.png'):
         for v in verbs:
             if v != 'sell':
-                recipients[v].append((Image.open(f'../characters/recipient/{recipient_file}'),
+                recipients[v].append((Image.open(f'characters/recipient/{recipient_file}'),
                     recipient_file.split('.')[0]))
 
 def make_or_append(d, k, v):
@@ -35,7 +35,7 @@ def make_or_append(d, k, v):
 def make_test_grid(verb, informativity):
     all_agents = {}
 
-    for agent_file in os.listdir(f'../characters/{verb}/'):
+    for agent_file in os.listdir(f'characters/{verb}/'):
         if not agent_file.endswith('.png'):
             continue
         make_or_append(all_agents, agent_file.split('-')[0], agent_file)
@@ -50,7 +50,7 @@ def make_test_grid(verb, informativity):
         scene_recipients = random.sample(recipients[verb], 4)
 
         for theme in agent_themes:
-            themes.append((Image.open(f'../characters/{verb}/{theme}'), theme.split('-')[2][:-4]))
+            themes.append((Image.open(f'characters/{verb}/{theme}'), theme.split('-')[2][:-4]))
 
         scene_list = [[r[0], t[0]] for t, r in zip(themes, scene_recipients)]
         labels = [f'{agent}-{verb}-{t[1]}-{r[1]}' for t, r in zip(themes, scene_recipients)]
@@ -60,7 +60,7 @@ def make_test_grid(verb, informativity):
         agent_themes = all_agents[agent]
 
         for theme in agent_themes:
-            themes.append((Image.open(f'../characters/{verb}/{theme}'), theme.split('-')[2][:-4]))
+            themes.append((Image.open(f'characters/{verb}/{theme}'), theme.split('-')[2][:-4]))
 
         if informativity == 'low':
             scene_themes = random.sample(themes, 2)
@@ -94,24 +94,24 @@ def make_test_grid(verb, informativity):
     random.shuffle(scene)
 
     for img in scene:
-        img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
+        img[0].save('../experiment/client/public/img/' + img[1] + '.png')
 
     return (labels, verb, informativity)
 
 def make_intransitive_grid():
     intransitives = []
 
-    for file in os.listdir(f'../characters/intransitive/'):
+    for file in os.listdir(f'characters/intransitive/'):
         if not file.endswith('.jpg'):
             continue
-        intransitives.append([Image.open(f'../characters/intransitive/{file}'), file[:-4]])
+        intransitives.append([Image.open(f'characters/intransitive/{file}'), file[:-4]])
 
     # all of the non-target images (transitive distractors + a couple intransitives)
     distractors = []
-    for file in os.listdir(f'../characters/intransitive/distractors/'):
+    for file in os.listdir(f'characters/intransitive/distractors/'):
         if not file.endswith('.jpg'):
             continue
-        distractors.append([Image.open(f'../characters/intransitive/distractors/{file}'), file[:-4]])
+        distractors.append([Image.open(f'characters/intransitive/distractors/{file}'), file[:-4]])
 
     images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(6)] # randomly select 6 images to use
     distractors.extend(intransitives) # add other images to distractors
@@ -126,17 +126,17 @@ def make_intransitive_grid():
         all_labels.append(([x[1] for x in scene], verb, 'filler'))
 
         for img in scene:
-            img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
+            img[0].save('../experiment/client/public/img/' + img[1] + '.png')
 
     return all_labels
 
 def make_transitive_grid():
     images = []
 
-    for file in os.listdir(f'../characters/transitive/'):
+    for file in os.listdir(f'characters/transitive/'):
         if not file.endswith('.jpg'):
             continue
-        images.append([Image.open(f'../characters/transitive/{file}'), file[:-4]])
+        images.append([Image.open(f'characters/transitive/{file}'), file[:-4]])
 
     random.shuffle(images)
 
@@ -149,7 +149,7 @@ def make_transitive_grid():
         all_labels.append(([x[1] for x in scene], verb, 'filler'))
 
         for img in scene:
-            img[0].save('../../experiment/client/public/img/' + img[1] + '.png')
+            img[0].save('../experiment/client/public/img/' + img[1] + '.png')
     
     return all_labels
 
@@ -186,7 +186,7 @@ for cond in conditions:
     
     random.shuffle(condition_rows)
 
-    with open(f'../../experiment/server/src/stims-{"".join([x[0] for x in cond])}.csv', 'w') as f:
+    with open(f'../experiment/server/src/stims-{"".join([x[0] for x in cond])}.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(['trialid', 'images', 'target', 'verb', 'informativity'])
         i = 1

@@ -23,9 +23,9 @@ def make_square(img, min_size = 360, background_color = (255, 255, 255)):
     return result
 
 for verb in all_verbs:
-    for img in os.listdir(f'../characters/{verb}/'):
+    for img in os.listdir(f'characters/{verb}/'):
         if img.endswith('.jpg'):
-            allfiles.append((f'../characters/{verb}/{img}', verb))
+            allfiles.append((f'characters/{verb}/{img}', verb))
 
 images = [[Image.open(x), x, y] for x, y in allfiles]
 
@@ -35,5 +35,5 @@ print(info.head(5))
 for img in images:
     im = make_square(img[0])
     row = info.loc[info['filename'] == img[1].split('/')[-1]].squeeze().tolist()
-    # print(f'../characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}')
-    im.save(f'../characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}.jpg')
+    # print(f'characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}')
+    im.save(f'characters/{img[2]}/{row[2].split()[1]}-{row[3]}-{row[4]}.jpg')
