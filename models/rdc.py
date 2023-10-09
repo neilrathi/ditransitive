@@ -1,9 +1,31 @@
 import numpy as np
 
+""" HELPER FUNCTIONS """
+
+# normalize a list by the sum of its elements
+def normalize(l):
+    if sum(l) != 0:
+        return [i / sum(l) for i in l]
+    else:
+        return [0 for i in l]
+
+# generates a distribution with equal probability
+# for each item in a list
+def uniform(l):
+    return {i : 1 / len(l) for i in l}
+
+# computes the expected value of a distribution
+def expected(dist):
+    e = 0
+    for k in dist:
+        e += k * dist[k]
+    return e
+
+""" SETUP """
 numgoals = 4
 
 # we encode goals as sets of objects
-# and we define states similarly as 'partial' goals
+# and we define states as subsets of goals, e.g. {'teacher', 'student'}
 goals = [{'teacher', 'student', 'book'}]
 
 utterances = [u for u in goals[0]]
@@ -13,25 +35,13 @@ for i in range(0, numgoals - 1):
 
 maxlen = max([len(x) for x in goals])
 
-# and then we define the reward of an utterance u in terms of a goal and a state
+""" LITERAL LISTENER MODEL """
+# an utterance is true (in the context of a communicative goal)
+# iff the utterance is present in the goal
 def meaning(goal, utt):
     return 1 if utt in goal else 0
 
-def normalize(l):
-    if sum(l) != 0:
-        return [i / sum(l) for i in l]
-    else:
-        return [0 for i in l]
-
-def uniform(l):
-    return {i : 1 / len(l) for i in l}
-
-def expected(support, dist):
-    e = 0
-    for k in support:
-        e += support[k] * dist[k]
-    return e
-
+# the listener assigns uniform reward to all utterances compatible with the state
 def reward(goal, u, state):
     # a list of all goals compatible with the current state
     valid_goals = [g for g in goals if state.issubset(g)]
@@ -39,6 +49,7 @@ def reward(goal, u, state):
 
     return normalize(counts)[goals.index(goal)]
 
+""" PRAGMATIC SPEAKER MODEL """
 def automatic(utt, state):
     return 1 / len(utterances)
 
@@ -63,3 +74,9 @@ def policy(goal, utt, state, depth = maxlen, a = 1, gamma = 0.5):
         return [i / sum(probs) for i in probs][utterances.index(utt)]
     
 print(policy({'teacher', 'student', 'book'}, 'student', {'teacher'}, depth = 1))
+
+def policy(goal, utt, state, a = 1, gamma = 0.5):
+    path = ['teacher', 'student', 'book']
+    value = a * reward(goal, path[-1], set(path[:-1])) - np.log(policy(goal, path[-1],  set(path[:-1]))/automatic(path[-1], set(path[:-1])))
+    for i, u in enumerate(reversed(path[:-1])):
+        value +=  a * reward(goal, u, set(path[:-(i + 1)])) - np.log(policy(goal, u,  set(path[:-(i + 1)]))/automatic(u, set(path[:-(i + 1)]))) + gamma * value

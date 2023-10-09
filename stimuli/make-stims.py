@@ -113,7 +113,7 @@ def make_intransitive_grid():
             continue
         distractors.append([Image.open(f'characters/intransitive/distractors/{file}'), file[:-4]])
 
-    images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(6)] # randomly select 6 images to use
+    images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(5)] # randomly select 5 images to use
     distractors.extend(intransitives) # add other images to distractors
     random.shuffle(distractors) # shuffle !
     
@@ -153,6 +153,31 @@ def make_transitive_grid():
     
     return all_labels
 
+def make_train_grid():
+    images = {x : [] for x in range(1,4)}
+
+    for dir in os.listdir(f'characters/train/'):
+        if dir == '.DS_Store':
+            continue
+        for file in os.listdir('characters/train/' + dir):
+            if not file.endswith('.jpg'):
+                continue
+            images[int(dir)].append([Image.open(f'characters/train/{dir}/{file}'), file[:-4]])
+
+    for i in images:
+        random.shuffle(images[i])
+
+    all_labels = []
+    for i, scene in enumerate(images.values()):
+        random.shuffle(scene)
+        verb = scene[0][1].split('-')[1]
+        all_labels.append(([x[1] for x in scene], verb, 'train'))
+
+        for img in scene:
+            img[0].save('../experiment/client/public/img/' + img[1] + '.png')
+    
+    return all_labels
+
 with open('allstims.csv', 'w') as f:
     writer = csv.writer(f)
     writer.writerow(['images', 'target', 'verb', 'informativity'])
@@ -166,18 +191,24 @@ with open('allstims.csv', 'w') as f:
     
     all_labels.extend(make_intransitive_grid())
     all_labels.extend(make_transitive_grid())
+    all_labels.extend(make_train_grid())
 
     for labels in all_labels:
         writer.writerow([','.join(labels[0]), labels[0][0], labels[1], labels[2]])
 
+every_character = set()
+
 for cond in conditions:
     condition_rows = []
+    train_rows = []
     with open('allstims.csv', 'r') as f:
         reader = csv.reader(f)
         cur_index = 0
         for row in reader:
             if row[3] == 'filler':
                 condition_rows.append(row)
+            if row[3] == 'train':
+                train_rows.append(row)
             if cur_index > 4:
                 continue
             if row[2] == verbs[cur_index] and row[3] == cond[cur_index]:
@@ -186,10 +217,40 @@ for cond in conditions:
     
     random.shuffle(condition_rows)
 
+    all_chars = set()
+    for row in condition_rows:
+        if row[3] != 'filler' and row[3] != 'train':
+            for image in row[0].split(','):
+                all_chars.add(image.split('-')[0])
+                all_chars.add(image.split('-')[2])
+                all_chars.add(image.split('-')[3])
+        else:
+            for image in row[0].split(','):
+                all_chars.add(image.split('-')[0])
+                all_chars.add(image.split('-')[2])
+
+    all_chars_list = list(all_chars)
+    random.shuffle(all_chars_list)
+    allrows = all_chars_list.copy()
+    random.shuffle(all_chars_list)
+    allrows += all_chars_list
+    allrows += train_rows
+    allrows += condition_rows
+    
     with open(f'../experiment/server/src/stims-{"".join([x[0] for x in cond])}.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(['trialid', 'images', 'target', 'verb', 'informativity'])
+        writer.writerow(['trialid', 'phase', 'label', 'images', 'target', 'verb', 'informativity'])
         i = 1
-        for row in condition_rows:
-            writer.writerow([i] + row)
+        for row in allrows:
+            if i <= len(all_chars_list): 
+                writer.writerow([i, 'train', row] + 4 * ['NA'])
+            elif i <= 2 * len(all_chars_list):
+                writer.writerow([i - len(all_chars_list), 'recall', row] + 4 * ['NA'])
+            elif i <= 2 * len(all_chars_list) + 3:
+                writer.writerow([i - 2 * len(all_chars_list), 'example', 'NA'] + row)
+            else:
+                writer.writerow([i - 2 * len(all_chars_list) - 3, 'choice', 'NA'] + row)
             i += 1
+    every_character.update(all_chars)
+
+print(every_character)
