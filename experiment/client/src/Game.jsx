@@ -2,6 +2,7 @@ import { usePlayer, useStage } from "@empirica/core/player/classic/react";
 
 import React from "react";
 import { Profile } from "./Profile";
+import { AudioRoom } from "./components/AudioRoom";
 import { Options } from "./components/Options";
 import { TrainImage } from "./components/TrainImage";
 import { RecallImage } from "./components/RecallImage";
@@ -15,6 +16,7 @@ export function Game() {
 
   // show images if on selection/result stage
   const options = stage.get("name") == "result" & player.stage.get("submit") ? null :
+    stage.get("name") == "joinroom" ? <AudioRoom userName = {player.id} roomCode = {player.get("roomCode")} forceJoin = {false}/> :
     stage.get("name") == "train" ? <TrainImage /> :
     stage.get("name") == "recall" ? <RecallImage /> :
     stage.get("name") == "instructions" ? <Instructions /> :

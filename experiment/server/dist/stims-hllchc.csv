@@ -1,0 +1,69 @@
+trialid,phase,label,images,target,verb,informativity
+1,train,book,NA,NA,NA,NA
+2,train,cup,NA,NA,NA,NA
+3,train,gun,NA,NA,NA,NA
+4,train,palette,NA,NA,NA,NA
+5,train,swimmer,NA,NA,NA,NA
+6,train,apple,NA,NA,NA,NA
+7,train,artist,NA,NA,NA,NA
+8,train,sailor,NA,NA,NA,NA
+9,train,hat,NA,NA,NA,NA
+10,train,burglar,NA,NA,NA,NA
+11,train,boxer,NA,NA,NA,NA
+12,train,clown,NA,NA,NA,NA
+13,train,cowboy,NA,NA,NA,NA
+14,train,waitress,NA,NA,NA,NA
+15,train,ball,NA,NA,NA,NA
+16,train,banana,NA,NA,NA,NA
+17,train,monk,NA,NA,NA,NA
+18,train,ballerina,NA,NA,NA,NA
+19,train,soldier,NA,NA,NA,NA
+20,train,chef,NA,NA,NA,NA
+21,train,pirate,NA,NA,NA,NA
+22,train,jug,NA,NA,NA,NA
+23,train,cake,NA,NA,NA,NA
+24,train,doctor,NA,NA,NA,NA
+1,recall,burglar,NA,NA,NA,NA
+2,recall,chef,NA,NA,NA,NA
+3,recall,gun,NA,NA,NA,NA
+4,recall,waitress,NA,NA,NA,NA
+5,recall,banana,NA,NA,NA,NA
+6,recall,artist,NA,NA,NA,NA
+7,recall,apple,NA,NA,NA,NA
+8,recall,cup,NA,NA,NA,NA
+9,recall,soldier,NA,NA,NA,NA
+10,recall,ball,NA,NA,NA,NA
+11,recall,monk,NA,NA,NA,NA
+12,recall,palette,NA,NA,NA,NA
+13,recall,swimmer,NA,NA,NA,NA
+14,recall,hat,NA,NA,NA,NA
+15,recall,boxer,NA,NA,NA,NA
+16,recall,cake,NA,NA,NA,NA
+17,recall,clown,NA,NA,NA,NA
+18,recall,jug,NA,NA,NA,NA
+19,recall,ballerina,NA,NA,NA,NA
+20,recall,book,NA,NA,NA,NA
+21,recall,sailor,NA,NA,NA,NA
+22,recall,pirate,NA,NA,NA,NA
+23,recall,doctor,NA,NA,NA,NA
+24,recall,cowboy,NA,NA,NA,NA
+1,example,NA,"waitress-drop-banana,chef-point (at)-clown,artist-elbow-doctor,pirate-eat-banana",waitress-drop-banana,drop,train
+2,example,NA,"chef-decorate-cake,pirate-shake-jug,pirate-slap-burglar,ballerina-pick up-boxer",chef-decorate-cake,decorate,train
+1,choice,NA,"ballerina-yell-swimmer,artist-reach (for)-cup,artist-drink-cup,chef-laugh (at)-burglar",ballerina-yell-swimmer,yell,filler
+2,choice,NA,"chef-cut-cake,pirate-clean-ball,cowboy-kick-soldier,artist-wash-ball",chef-cut-cake,cut,filler
+3,choice,NA,"waitress-run-soldier,chef-burn-hat,doctor-dance-cowboy,chef-cut-banana",waitress-run-soldier,run,filler
+4,choice,NA,"pirate-smile-clown,ballerina-hug-sailor,artist-sniff-apple,ballerina-attack-monk",pirate-smile-clown,smile,filler
+5,choice,NA,"ballerina-bite-apple,monk-chase-boxer,waitress-touch-swimmer,artist-wash-jug",ballerina-bite-apple,bite,filler
+6,choice,NA,"chef-sell-hat-doctor,chef-sell-cup-clown,chef-sell-cake-ballerina,chef-sell-book-sailor",chef-sell-hat-doctor,sell,control
+7,choice,NA,"ballerina-throw-banana-swimmer,ballerina-throw-book-boxer,ballerina-throw-banana-soldier,ballerina-throw-book-monk",ballerina-throw-banana-swimmer,throw,low
+8,choice,NA,"pirate-wink-doctor,cowboy-take off-hat,artist-examine-apple,chef-tickle-burglar",pirate-wink-doctor,wink,filler
+9,choice,NA,"pirate-drop-cake,pirate-bounce-ball,artist-examine-cake,monk-chase-ballerina",pirate-drop-cake,drop,filler
+10,choice,NA,"pirate-wink-sailor,cowboy-drag-jug,artist-sniff-cup,chef-fight-sailor",pirate-wink-sailor,wink,filler
+11,choice,NA,"waitress-show-banana-swimmer,waitress-show-ball-sailor,waitress-show-apple-clown,waitress-show-cup-doctor",waitress-show-banana-swimmer,show,control
+12,choice,NA,"ballerina-wash-gun,waitress-open-book,waitress-catch-doctor,ballerina-bump (into)-cake",ballerina-wash-gun,wash,filler
+13,choice,NA,"cowboy-toss-book-boxer,cowboy-toss-book-swimmer,cowboy-toss-book-monk,cowboy-toss-book-clown",cowboy-toss-book-boxer,toss,high
+14,choice,NA,"cowboy-poke-monk,artist-examine-palette,pirate-slap-sailor,ballerina-trip-boxer",cowboy-poke-monk,poke,filler
+15,choice,NA,"artist-spill-cup,cowboy-carry-swimmer,pirate-drop-book,chef-cut-apple",artist-spill-cup,spill,filler
+16,choice,NA,"pirate-smile-monk,waitress-peel-banana,chef-step (on)-soldier,waitress-kiss-swimmer",pirate-smile-monk,smile,filler
+17,choice,NA,"ballerina-give-banana-monk,ballerina-give-banana-boxer,ballerina-give-banana-sailor,ballerina-give-banana-soldier",ballerina-give-banana-monk,give,high
+18,choice,NA,"cowboy-offer-banana-monk,cowboy-offer-cake-swimmer,cowboy-offer-banana-boxer,cowboy-offer-cake-doctor",cowboy-offer-banana-monk,offer,low

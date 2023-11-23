@@ -80,6 +80,12 @@ Empirica.onGameStart(({ game }) => {
   })
 
   let roundCounter = 1;
+  
+  const joinRound = game.addRound({
+    name: `Round ${roundCounter}`
+  });
+  joinRound.addStage({ name: "joinroom", duration: 10000 });
+
   stims.map(function(stim) {
     if (stim.phase == 'train') {
       if (stim.trialid == 1) {

@@ -10,7 +10,7 @@ export function Choice() {
   return (
     <div>
 
-      You are the <strong>{player.get("role")}</strong>. {instructions} <AudioRoom userName = {player.id} roomCode = {player.get("roomCode")} forceJoin = {false}/>
+      You are the <strong>{player.get("role")}</strong>. {instructions}
 
     </div>
   );

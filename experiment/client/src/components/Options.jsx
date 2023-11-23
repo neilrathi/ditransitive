@@ -13,7 +13,7 @@ export function Options() {
         round.set("decision", choice);
         // Guesser selection sets "submit" to "true" for all players, necessary for stage advance https://docs.empirica.ly/overview/lifecycle/customising-when-players-submit-stages
         players.map(p => p.stage.set("submit", true))
-        hmsActions.leave();
+        // hmsActions.leave();
       }
     }
 
