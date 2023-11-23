@@ -1,0 +1,69 @@
+trialid,phase,label,images,target,verb,informativity
+1,train,ball,NA,NA,NA,NA
+2,train,book,NA,NA,NA,NA
+3,train,artist,NA,NA,NA,NA
+4,train,jug,NA,NA,NA,NA
+5,train,soldier,NA,NA,NA,NA
+6,train,cake,NA,NA,NA,NA
+7,train,ballerina,NA,NA,NA,NA
+8,train,monk,NA,NA,NA,NA
+9,train,waitress,NA,NA,NA,NA
+10,train,boxer,NA,NA,NA,NA
+11,train,apple,NA,NA,NA,NA
+12,train,swimmer,NA,NA,NA,NA
+13,train,burglar,NA,NA,NA,NA
+14,train,gun,NA,NA,NA,NA
+15,train,cowboy,NA,NA,NA,NA
+16,train,cup,NA,NA,NA,NA
+17,train,clown,NA,NA,NA,NA
+18,train,chef,NA,NA,NA,NA
+19,train,doctor,NA,NA,NA,NA
+20,train,sailor,NA,NA,NA,NA
+21,train,pirate,NA,NA,NA,NA
+22,train,hat,NA,NA,NA,NA
+23,train,banana,NA,NA,NA,NA
+24,train,palette,NA,NA,NA,NA
+1,recall,clown,NA,NA,NA,NA
+2,recall,artist,NA,NA,NA,NA
+3,recall,waitress,NA,NA,NA,NA
+4,recall,cowboy,NA,NA,NA,NA
+5,recall,boxer,NA,NA,NA,NA
+6,recall,burglar,NA,NA,NA,NA
+7,recall,palette,NA,NA,NA,NA
+8,recall,hat,NA,NA,NA,NA
+9,recall,doctor,NA,NA,NA,NA
+10,recall,apple,NA,NA,NA,NA
+11,recall,ball,NA,NA,NA,NA
+12,recall,soldier,NA,NA,NA,NA
+13,recall,banana,NA,NA,NA,NA
+14,recall,cup,NA,NA,NA,NA
+15,recall,monk,NA,NA,NA,NA
+16,recall,book,NA,NA,NA,NA
+17,recall,jug,NA,NA,NA,NA
+18,recall,sailor,NA,NA,NA,NA
+19,recall,gun,NA,NA,NA,NA
+20,recall,chef,NA,NA,NA,NA
+21,recall,cake,NA,NA,NA,NA
+22,recall,pirate,NA,NA,NA,NA
+23,recall,swimmer,NA,NA,NA,NA
+24,recall,ballerina,NA,NA,NA,NA
+1,example,NA,"chef-point (at)-clown,pirate-eat-banana,artist-elbow-doctor,waitress-drop-banana",chef-point (at)-clown,point (at),train
+2,example,NA,"pirate-shake-jug,ballerina-pick up-boxer,chef-decorate-cake,pirate-slap-burglar",pirate-shake-jug,shake,train
+1,choice,NA,"artist-examine-palette,monk-chase-boxer,artist-spill-cup,artist-wash-jug",artist-examine-palette,examine,filler
+2,choice,NA,"pirate-give-apple-doctor,pirate-give-apple-sailor,pirate-give-apple-monk,pirate-give-apple-soldier",pirate-give-apple-doctor,give,high
+3,choice,NA,"cowboy-toss-apple-swimmer,cowboy-toss-ball-boxer,cowboy-toss-book-sailor,cowboy-toss-banana-monk",cowboy-toss-apple-swimmer,toss,control
+4,choice,NA,"pirate-clean-ball,ballerina-trip-boxer,cowboy-poke-monk,pirate-drop-cake",pirate-clean-ball,clean,filler
+5,choice,NA,"ballerina-throw-cake-clown,ballerina-throw-hat-sailor,ballerina-throw-banana-doctor,ballerina-throw-book-boxer",ballerina-throw-cake-clown,throw,control
+6,choice,NA,"pirate-smile-clown,waitress-run-soldier,pirate-wink-doctor,chef-fight-sailor",pirate-smile-clown,smile,filler
+7,choice,NA,"chef-burn-hat,cowboy-drag-jug,chef-step (on)-soldier,chef-tickle-burglar",chef-burn-hat,burn,filler
+8,choice,NA,"cowboy-carry-swimmer,ballerina-bump (into)-cake,waitress-catch-doctor,monk-chase-ballerina",cowboy-carry-swimmer,carry,filler
+9,choice,NA,"ballerina-sell-apple-clown,ballerina-sell-apple-sailor,ballerina-sell-apple-ballerina,ballerina-sell-apple-doctor",ballerina-sell-apple-clown,sell,high
+10,choice,NA,"pirate-bounce-ball,waitress-touch-swimmer,artist-wash-ball,waitress-open-book",pirate-bounce-ball,bounce,filler
+11,choice,NA,"cowboy-offer-cake-monk,cowboy-offer-banana-swimmer,cowboy-offer-cake-boxer,cowboy-offer-banana-doctor",cowboy-offer-cake-monk,offer,low
+12,choice,NA,"pirate-smile-monk,artist-sniff-apple,waitress-peel-banana,cowboy-take off-hat",pirate-smile-monk,smile,filler
+13,choice,NA,"doctor-dance-cowboy,ballerina-attack-monk,chef-cut-banana,artist-examine-apple",doctor-dance-cowboy,dance,filler
+14,choice,NA,"ballerina-yell-swimmer,waitress-kiss-swimmer,pirate-wink-sailor,artist-reach (for)-cup",ballerina-yell-swimmer,yell,filler
+15,choice,NA,"ballerina-bite-apple,chef-cut-apple,cowboy-kick-soldier,chef-cut-cake",ballerina-bite-apple,bite,filler
+16,choice,NA,"pirate-show-hat-clown,pirate-show-book-doctor,pirate-show-hat-soldier,pirate-show-book-monk",pirate-show-hat-clown,show,low
+17,choice,NA,"pirate-slap-sailor,ballerina-wash-gun,pirate-drop-book,artist-examine-cake",pirate-slap-sailor,slap,filler
+18,choice,NA,"chef-laugh (at)-burglar,artist-sniff-cup,ballerina-hug-sailor,artist-drink-cup",chef-laugh (at)-burglar,laugh (at),filler

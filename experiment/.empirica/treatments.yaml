@@ -1,0 +1,46 @@
+factors:
+    - name: playerCount
+      desc: playerCount determines the number of Players are in a Game.
+      values:
+        - value: 1
+        - value: 2
+        - value: 3
+        - value: 5
+        - value: 8
+        - value: 13
+    - name: templateID
+      values:
+        - value: 64c8a8e0b91f7e0f7b84ecf1
+    - name: condition
+      values:
+        - value: cchhl
+        - value: ccllh
+        - value: hhccl
+        - value: hhllc
+        - value: llcch
+        - value: llhhc
+        - value: test
+    - name: managementToken
+      values:
+        - value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+treatments:
+    - name: Two Players
+      desc: Two-player Game
+      factors:
+        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+        playerCount: 2
+        templateID: 64c8a8e0b91f7e0f7b84ecf1
+    - name: CCHHL
+      desc: Two-player (CCHHL)
+      factors:
+        condition: cchhl
+        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+        playerCount: 2
+        templateID: 64c8a8e0b91f7e0f7b84ecf1
+    - name: test
+      desc: Two-player (test)
+      factors:
+        condition: test
+        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+        playerCount: 2
+        templateID: 64c8a8e0b91f7e0f7b84ecf1

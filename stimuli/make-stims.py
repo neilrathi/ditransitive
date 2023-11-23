@@ -5,13 +5,13 @@ import random
 import csv
 import itertools
 
-verbs = ['give', 'offer', 'throw', 'show', 'sell']
+verbs = ['give', 'offer', 'throw', 'show', 'toss', 'sell']
 informativities = ['control', 'low', 'high']
 
-all_conditions = [list(cond) for cond in itertools.permutations(informativities, 3)]
-conditions = []
-for cond in all_conditions:
-    conditions.append((cond[0], cond[0], cond[1], cond[1], cond[2]))
+conditions = list(set(itertools.permutations(informativities * 2, 6)))
+# conditions = []
+# for cond in all_conditions:
+#     conditions.append((cond[0], cond[0], cond[1], cond[1], cond[2]))
 
 recipients = {v : [] for v in verbs}
 
@@ -63,15 +63,18 @@ def make_test_grid(verb, informativity):
             themes.append((Image.open(f'characters/{verb}/{theme}'), theme.split('-')[2][:-4]))
 
         if informativity == 'low':
-            scene_themes = random.sample(themes, 2)
-            scene_recipients = random.sample(recipients[verb], 2)
+            scene_themes = 2 * random.sample(themes, 2)
+            scene_recipients = random.sample(recipients[verb], 4)
+
+            scene_list = [[r[0], t[0]] for t, r in zip(scene_themes, scene_recipients)]
+            labels = [f'{agent}-{verb}-{t[1]}-{r[1]}' for t, r in zip(scene_themes, scene_recipients)]
 
         if informativity == 'high':
             scene_themes = random.sample(themes, 1)
             scene_recipients = random.sample(recipients[verb], 4)
 
-        scene_list = [[r[0], t[0]] for t in scene_themes for r in scene_recipients]
-        labels = [f'{agent}-{verb}-{t[1]}-{r[1]}' for t in scene_themes for r in scene_recipients]
+            scene_list = [[r[0], t[0]] for t in scene_themes for r in scene_recipients]
+            labels = [f'{agent}-{verb}-{t[1]}-{r[1]}' for t in scene_themes for r in scene_recipients]
 
     scene = []
 
@@ -102,18 +105,18 @@ def make_intransitive_grid():
     intransitives = []
 
     for file in os.listdir(f'characters/intransitive/'):
-        if not file.endswith('.jpg'):
+        if not file.endswith('.jpg') and not file.endswith('.png'):
             continue
         intransitives.append([Image.open(f'characters/intransitive/{file}'), file[:-4]])
 
     # all of the non-target images (transitive distractors + a couple intransitives)
     distractors = []
     for file in os.listdir(f'characters/intransitive/distractors/'):
-        if not file.endswith('.jpg'):
+        if not file.endswith('.jpg') and not file.endswith('.png'):
             continue
         distractors.append([Image.open(f'characters/intransitive/distractors/{file}'), file[:-4]])
 
-    images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(5)] # randomly select 5 images to use
+    images = [intransitives.pop(random.randrange(len(intransitives))) for _ in range(6)] # randomly select 6 images to use
     distractors.extend(intransitives) # add other images to distractors
     random.shuffle(distractors) # shuffle !
     
@@ -134,7 +137,7 @@ def make_transitive_grid():
     images = []
 
     for file in os.listdir(f'characters/transitive/'):
-        if not file.endswith('.jpg'):
+        if not file.endswith('.jpg') and not file.endswith('.png'):
             continue
         images.append([Image.open(f'characters/transitive/{file}'), file[:-4]])
 
@@ -149,18 +152,19 @@ def make_transitive_grid():
         all_labels.append(([x[1] for x in scene], verb, 'filler'))
 
         for img in scene:
+            #img[0].save('../experiment/client/public/img/' + img[1] + '.png')
             img[0].save('../experiment/client/public/img/' + img[1] + '.png')
     
     return all_labels
 
 def make_train_grid():
-    images = {x : [] for x in range(1,4)}
+    images = {x : [] for x in range(1,3)}
 
     for dir in os.listdir(f'characters/train/'):
         if dir == '.DS_Store':
             continue
         for file in os.listdir('characters/train/' + dir):
-            if not file.endswith('.jpg'):
+            if not file.endswith('.jpg') and not file.endswith('.png'):
                 continue
             images[int(dir)].append([Image.open(f'characters/train/{dir}/{file}'), file[:-4]])
 
@@ -209,7 +213,7 @@ for cond in conditions:
                 condition_rows.append(row)
             if row[3] == 'train':
                 train_rows.append(row)
-            if cur_index > 4:
+            if cur_index > 5:
                 continue
             if row[2] == verbs[cur_index] and row[3] == cond[cur_index]:
                 condition_rows.append(row)
@@ -246,10 +250,10 @@ for cond in conditions:
                 writer.writerow([i, 'train', row] + 4 * ['NA'])
             elif i <= 2 * len(all_chars_list):
                 writer.writerow([i - len(all_chars_list), 'recall', row] + 4 * ['NA'])
-            elif i <= 2 * len(all_chars_list) + 3:
+            elif i <= 2 * len(all_chars_list) + 2:
                 writer.writerow([i - 2 * len(all_chars_list), 'example', 'NA'] + row)
             else:
-                writer.writerow([i - 2 * len(all_chars_list) - 3, 'choice', 'NA'] + row)
+                writer.writerow([i - 2 * len(all_chars_list) - 2, 'choice', 'NA'] + row)
             i += 1
     every_character.update(all_chars)
 
