@@ -1,69 +1,69 @@
 trialid,phase,label,images,target,verb,informativity
-1,train,palette,NA,NA,NA,NA
-2,train,apple,NA,NA,NA,NA
-3,train,pirate,NA,NA,NA,NA
-4,train,cowboy,NA,NA,NA,NA
-5,train,ballerina,NA,NA,NA,NA
-6,train,soldier,NA,NA,NA,NA
-7,train,sailor,NA,NA,NA,NA
-8,train,hat,NA,NA,NA,NA
-9,train,swimmer,NA,NA,NA,NA
-10,train,cup,NA,NA,NA,NA
-11,train,ball,NA,NA,NA,NA
-12,train,boxer,NA,NA,NA,NA
-13,train,clown,NA,NA,NA,NA
-14,train,chef,NA,NA,NA,NA
-15,train,banana,NA,NA,NA,NA
-16,train,jug,NA,NA,NA,NA
-17,train,monk,NA,NA,NA,NA
+1,train,banana,NA,NA,NA,NA
+2,train,clown,NA,NA,NA,NA
+3,train,soldier,NA,NA,NA,NA
+4,train,doctor,NA,NA,NA,NA
+5,train,sailor,NA,NA,NA,NA
+6,train,pirate,NA,NA,NA,NA
+7,train,ballerina,NA,NA,NA,NA
+8,train,gun,NA,NA,NA,NA
+9,train,chef,NA,NA,NA,NA
+10,train,artist,NA,NA,NA,NA
+11,train,jug,NA,NA,NA,NA
+12,train,cowboy,NA,NA,NA,NA
+13,train,burglar,NA,NA,NA,NA
+14,train,hat,NA,NA,NA,NA
+15,train,ball,NA,NA,NA,NA
+16,train,waitress,NA,NA,NA,NA
+17,train,boxer,NA,NA,NA,NA
 18,train,book,NA,NA,NA,NA
 19,train,cake,NA,NA,NA,NA
-20,train,doctor,NA,NA,NA,NA
-21,train,waitress,NA,NA,NA,NA
-22,train,burglar,NA,NA,NA,NA
-23,train,gun,NA,NA,NA,NA
-24,train,artist,NA,NA,NA,NA
-1,recall,cowboy,NA,NA,NA,NA
-2,recall,swimmer,NA,NA,NA,NA
-3,recall,boxer,NA,NA,NA,NA
-4,recall,pirate,NA,NA,NA,NA
-5,recall,waitress,NA,NA,NA,NA
-6,recall,hat,NA,NA,NA,NA
-7,recall,burglar,NA,NA,NA,NA
-8,recall,soldier,NA,NA,NA,NA
-9,recall,sailor,NA,NA,NA,NA
-10,recall,apple,NA,NA,NA,NA
-11,recall,gun,NA,NA,NA,NA
-12,recall,artist,NA,NA,NA,NA
-13,recall,doctor,NA,NA,NA,NA
-14,recall,clown,NA,NA,NA,NA
-15,recall,ball,NA,NA,NA,NA
-16,recall,chef,NA,NA,NA,NA
-17,recall,monk,NA,NA,NA,NA
-18,recall,cake,NA,NA,NA,NA
-19,recall,cup,NA,NA,NA,NA
-20,recall,jug,NA,NA,NA,NA
-21,recall,palette,NA,NA,NA,NA
-22,recall,book,NA,NA,NA,NA
-23,recall,ballerina,NA,NA,NA,NA
-24,recall,banana,NA,NA,NA,NA
-1,example,NA,"chef-point (at)-clown,pirate-eat-banana,artist-elbow-doctor,waitress-drop-banana",chef-point (at)-clown,point (at),train
-2,example,NA,"pirate-shake-jug,ballerina-pick up-boxer,chef-decorate-cake,pirate-slap-burglar",pirate-shake-jug,shake,train
-1,choice,NA,"ballerina-sell-apple-clown,ballerina-sell-apple-sailor,ballerina-sell-apple-ballerina,ballerina-sell-apple-doctor",ballerina-sell-apple-clown,sell,high
-2,choice,NA,"waitress-show-apple-sailor,waitress-show-ball-soldier,waitress-show-banana-boxer,waitress-show-cup-clown",waitress-show-apple-sailor,show,control
-3,choice,NA,"cowboy-toss-book-soldier,cowboy-toss-book-sailor,cowboy-toss-book-doctor,cowboy-toss-book-boxer",cowboy-toss-book-soldier,toss,high
-4,choice,NA,"ballerina-yell-swimmer,waitress-kiss-swimmer,pirate-wink-sailor,artist-reach (for)-cup",ballerina-yell-swimmer,yell,filler
-5,choice,NA,"pirate-slap-sailor,ballerina-wash-gun,pirate-drop-book,artist-examine-cake",pirate-slap-sailor,slap,filler
-6,choice,NA,"pirate-smile-clown,waitress-run-soldier,pirate-wink-doctor,chef-fight-sailor",pirate-smile-clown,smile,filler
-7,choice,NA,"pirate-clean-ball,ballerina-trip-boxer,cowboy-poke-monk,pirate-drop-cake",pirate-clean-ball,clean,filler
-8,choice,NA,"chef-laugh (at)-burglar,artist-sniff-cup,ballerina-hug-sailor,artist-drink-cup",chef-laugh (at)-burglar,laugh (at),filler
-9,choice,NA,"ballerina-bite-apple,chef-cut-apple,cowboy-kick-soldier,chef-cut-cake",ballerina-bite-apple,bite,filler
-10,choice,NA,"chef-burn-hat,cowboy-drag-jug,chef-step (on)-soldier,chef-tickle-burglar",chef-burn-hat,burn,filler
-11,choice,NA,"ballerina-give-apple-sailor,ballerina-give-banana-swimmer,ballerina-give-apple-doctor,ballerina-give-banana-monk",ballerina-give-apple-sailor,give,low
-12,choice,NA,"pirate-smile-monk,artist-sniff-apple,waitress-peel-banana,cowboy-take off-hat",pirate-smile-monk,smile,filler
-13,choice,NA,"artist-examine-palette,monk-chase-boxer,artist-spill-cup,artist-wash-jug",artist-examine-palette,examine,filler
-14,choice,NA,"cowboy-carry-swimmer,ballerina-bump (into)-cake,waitress-catch-doctor,monk-chase-ballerina",cowboy-carry-swimmer,carry,filler
-15,choice,NA,"pirate-bounce-ball,waitress-touch-swimmer,artist-wash-ball,waitress-open-book",pirate-bounce-ball,bounce,filler
-16,choice,NA,"doctor-dance-cowboy,ballerina-attack-monk,chef-cut-banana,artist-examine-apple",doctor-dance-cowboy,dance,filler
-17,choice,NA,"ballerina-throw-hat-swimmer,ballerina-throw-book-soldier,ballerina-throw-hat-sailor,ballerina-throw-book-doctor",ballerina-throw-hat-swimmer,throw,low
-18,choice,NA,"artist-offer-book-clown,artist-offer-hat-boxer,artist-offer-apple-doctor,artist-offer-ball-sailor",artist-offer-book-clown,offer,control
+20,train,apple,NA,NA,NA,NA
+21,train,palette,NA,NA,NA,NA
+22,train,swimmer,NA,NA,NA,NA
+23,train,cup,NA,NA,NA,NA
+24,train,monk,NA,NA,NA,NA
+1,recall,monk,NA,NA,NA,NA
+2,recall,chef,NA,NA,NA,NA
+3,recall,burglar,NA,NA,NA,NA
+4,recall,clown,NA,NA,NA,NA
+5,recall,ballerina,NA,NA,NA,NA
+6,recall,cup,NA,NA,NA,NA
+7,recall,pirate,NA,NA,NA,NA
+8,recall,boxer,NA,NA,NA,NA
+9,recall,doctor,NA,NA,NA,NA
+10,recall,palette,NA,NA,NA,NA
+11,recall,hat,NA,NA,NA,NA
+12,recall,cake,NA,NA,NA,NA
+13,recall,apple,NA,NA,NA,NA
+14,recall,cowboy,NA,NA,NA,NA
+15,recall,book,NA,NA,NA,NA
+16,recall,gun,NA,NA,NA,NA
+17,recall,swimmer,NA,NA,NA,NA
+18,recall,soldier,NA,NA,NA,NA
+19,recall,ball,NA,NA,NA,NA
+20,recall,sailor,NA,NA,NA,NA
+21,recall,banana,NA,NA,NA,NA
+22,recall,waitress,NA,NA,NA,NA
+23,recall,jug,NA,NA,NA,NA
+24,recall,artist,NA,NA,NA,NA
+1,example,NA,"waitress-drop-banana,chef-point (at)-clown,artist-elbow-doctor,pirate-eat-banana",waitress-drop-banana,drop,train
+2,example,NA,"chef-decorate-cake,pirate-shake-jug,pirate-slap-burglar,ballerina-pick up-boxer",chef-decorate-cake,decorate,train
+1,choice,NA,"pirate-give-banana-doctor,pirate-give-ball-soldier,pirate-give-banana-boxer,pirate-give-ball-sailor",pirate-give-banana-doctor,give,low
+2,choice,NA,"ballerina-sell-banana-sailor,ballerina-sell-banana-ballerina,ballerina-sell-banana-clown,ballerina-sell-banana-doctor",ballerina-sell-banana-sailor,sell,high
+3,choice,NA,"chef-cut-cake,pirate-clean-ball,cowboy-kick-soldier,artist-wash-ball",chef-cut-cake,cut,filler
+4,choice,NA,"waitress-show-banana-swimmer,waitress-show-ball-sailor,waitress-show-apple-clown,waitress-show-cup-doctor",waitress-show-banana-swimmer,show,control
+5,choice,NA,"pirate-wink-sailor,cowboy-drag-jug,artist-sniff-cup,chef-fight-sailor",pirate-wink-sailor,wink,filler
+6,choice,NA,"pirate-drop-cake,pirate-bounce-ball,artist-examine-cake,monk-chase-ballerina",pirate-drop-cake,drop,filler
+7,choice,NA,"artist-spill-cup,cowboy-carry-swimmer,pirate-drop-book,chef-cut-apple",artist-spill-cup,spill,filler
+8,choice,NA,"ballerina-bite-apple,monk-chase-boxer,waitress-touch-swimmer,artist-wash-jug",ballerina-bite-apple,bite,filler
+9,choice,NA,"artist-offer-apple-monk,artist-offer-ball-soldier,artist-offer-book-doctor,artist-offer-hat-clown",artist-offer-apple-monk,offer,control
+10,choice,NA,"pirate-wink-doctor,cowboy-take off-hat,artist-examine-apple,chef-tickle-burglar",pirate-wink-doctor,wink,filler
+11,choice,NA,"pirate-smile-monk,waitress-peel-banana,chef-step (on)-soldier,waitress-kiss-swimmer",pirate-smile-monk,smile,filler
+12,choice,NA,"waitress-run-soldier,chef-burn-hat,doctor-dance-cowboy,chef-cut-banana",waitress-run-soldier,run,filler
+13,choice,NA,"cowboy-poke-monk,artist-examine-palette,pirate-slap-sailor,ballerina-trip-boxer",cowboy-poke-monk,poke,filler
+14,choice,NA,"ballerina-wash-gun,waitress-open-book,waitress-catch-doctor,ballerina-bump (into)-cake",ballerina-wash-gun,wash,filler
+15,choice,NA,"ballerina-yell-swimmer,artist-reach (for)-cup,artist-drink-cup,chef-laugh (at)-burglar",ballerina-yell-swimmer,yell,filler
+16,choice,NA,"cowboy-toss-book-boxer,cowboy-toss-book-swimmer,cowboy-toss-book-monk,cowboy-toss-book-clown",cowboy-toss-book-boxer,toss,high
+17,choice,NA,"pirate-smile-clown,ballerina-hug-sailor,artist-sniff-apple,ballerina-attack-monk",pirate-smile-clown,smile,filler
+18,choice,NA,"ballerina-throw-banana-swimmer,ballerina-throw-book-boxer,ballerina-throw-banana-soldier,ballerina-throw-book-monk",ballerina-throw-banana-swimmer,throw,low
