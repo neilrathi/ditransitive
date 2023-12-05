@@ -12,6 +12,8 @@ import { Train } from "./stages/Train";
 import { Recall } from "./stages/Recall";
 import { Button } from "./components/Button";
 import { ExChoice } from "./stages/ExChoice";
+import { ExResult } from "./stages/ExResult";
+import { InstructionsBar } from "./stages/InstructionsBar";
 
 export function Stage() {
   const player = usePlayer();
@@ -39,9 +41,9 @@ export function Stage() {
     case "example-choice":
       return <ExChoice />;
     case "example-result":
-      return <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button>;    
+      return <ExResult />
     case "instructions":
-      return <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button>;
+      return <InstructionsBar />;
     default:
       return <Loading />;
   }

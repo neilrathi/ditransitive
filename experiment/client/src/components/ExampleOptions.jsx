@@ -17,7 +17,7 @@ export function ExampleOptions() {
     }
 
     const imgOrder = player.get("role") == "guesser" ? round.get("guesserOrder") : round.get("directorOrder")
-    const label = player.get("role") == "director" ? (stage.get("name") == "example-choice" ? round.get("verb") : round.get("target")) : round.get("target")
+    const label = player.get("role") == "director" ? (stage.get("name") == "example-choice" ? round.get("verb") : round.get("label")) : round.get("label")
   
     return (
 

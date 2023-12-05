@@ -5,7 +5,7 @@ import { usePlayer } from "@empirica/core/player/classic/react";
 export function ExChoice() {
   const player = usePlayer();
   const sec = "border-transparent shadow-sm text-white bg-empirica-600 hover:bg-empirica-700";
-  const instructions = player.get("role") == 'director' ? 'How would you describe the target image?' : 'Click on the target image.'
+  const instructions = player.get("role") == 'director' ? 'Describe the target image.' : 'Click on the target image.'
   const cont = player.get("role") == 'director' ? <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button> : null
 
   return (

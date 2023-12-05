@@ -212,7 +212,10 @@ for cond in conditions:
             if row[3] == 'filler':
                 condition_rows.append(row)
             if row[3] == 'train':
-                train_rows.append(row)
+                if 'waitress-drop-banana' in row[0]:
+                    train_rows.append([row[0], 'waitress-drop-banana', 'drop', 'train'])
+                if 'chef-decorate-cake' in row[0]:
+                    train_rows.append([row[0], 'chef-decorate-cake', 'decorate', 'train'])
             if cur_index > 5:
                 continue
             if row[2] == verbs[cur_index] and row[3] == cond[cur_index]:
@@ -250,8 +253,10 @@ for cond in conditions:
                 writer.writerow([i, 'train', row] + 4 * ['NA'])
             elif i <= 2 * len(all_chars_list):
                 writer.writerow([i - len(all_chars_list), 'recall', row] + 4 * ['NA'])
+            elif i <= 2 * len(all_chars_list) + 1:
+                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The waitress dropped the banana'] + row)
             elif i <= 2 * len(all_chars_list) + 2:
-                writer.writerow([i - 2 * len(all_chars_list), 'example', 'NA'] + row)
+                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The chef decorated the cake'] + row)
             else:
                 writer.writerow([i - 2 * len(all_chars_list) - 2, 'choice', 'NA'] + row)
             i += 1

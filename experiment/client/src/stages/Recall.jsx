@@ -9,7 +9,7 @@ export function Recall() {
     <div>
       <table>
         <tr>
-          <td style = {{paddingRight: "10px"}}> Identify this character using the name you learned in the previous stage. </td>
+          <td style = {{paddingRight: "10px"}}> Correctly label the image. </td>
         </tr>
       </table>
 

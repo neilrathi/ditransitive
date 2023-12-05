@@ -6,7 +6,9 @@ export function TrainImage({}) {
 
   return (
     <div className = 'justify-center m-5' style = {{width: "400px", padding: '2px'}}>
-      <img src={'../../unique/' + round.get('label') + '.png'} />
+      <div className = "flex justify-center m-5" style = {{width: "360px", border: "solid 5px black", padding: '2px'}}>
+        <img src={'../../unique/' + round.get('label') + '.png'} />
+      </div>
       <div className="flex justify-center m-5">
         <strong className = 'text-2xl'>{round.get('label')}</strong>
       </div>

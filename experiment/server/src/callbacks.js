@@ -5,6 +5,7 @@ const fs = require("fs");
 
 export const Empirica = new ClassicListenersCollector();
 
+
 Empirica.on("batch", "status", (ctx, { batch, status }) => {
   
   console.log(`Batch ${batch.id} changed status to "${status}"`);
@@ -57,8 +58,8 @@ Empirica.onGameStart(({ game }) => {
 
   game.set("timestamps", [])
 
-  const treatment = game.get("treatment")
-  const { condition } = treatment;
+  const all_combinations = ['lhhlcc', 'cchllh', 'hlhclc', 'lhcclh', 'hcllch', 'hccllh', 'lchlch', 'lclhch', 'cchlhl', 'chhlcl', 'lhlcch', 'clhhlc', 'hclhcl', 'lhlhcc', 'hlclhc', 'hhclcl', 'chllch', 'lcchlh', 'chclhl', 'lhcchl', 'lchchl', 'hchllc', 'chlhcl', 'chchll', 'cllchh', 'hlchcl', 'clchlh', 'chlchl', 'cclhlh', 'hcclhl', 'llchhc', 'lchlhc', 'llhhcc', 'lhlchc', 'hllhcc', 'cllhhc', 'clhchl', 'hhccll', 'hlchlc', 'hhlclc', 'hclchl', 'cclhhl', 'hcllhc', 'clchhl', 'lcclhh', 'chhllc', 'chcllh', 'clclhh', 'hlcclh', 'hclhlc', 'hclclh', 'lchclh', 'lhclhc', 'hllchc', 'hllcch', 'hhllcc', 'ccllhh', 'clhlch', 'chllhc', 'chlhlc', 'lhchlc', 'lclhhc', 'lhchcl', 'clhhcl', 'hhcllc', 'hlhccl', 'lchhcl', 'lhhccl', 'hchcll', 'llhchc', 'hlcchl', 'llchch', 'hcchll', 'clhclh', 'lchhlc', 'llhcch', 'hhlccl', 'chlclh', 'hlclch', 'lhhclc', 'cllhch', 'lcchhl', 'lclchh', 'hchlcl', 'lhclch', 'cchhll', 'chhcll', 'llcchh', 'clhlhc', 'hlhlcc'];
+  const condition = all_combinations[Math.floor(Math.random() * all_combinations.length)];
 
   const roleList = _.shuffle(['director','guesser'])
   game.players.forEach((player, i) => {
@@ -81,17 +82,12 @@ Empirica.onGameStart(({ game }) => {
 
   let roundCounter = 1;
   
-  const joinRound = game.addRound({
-    name: `Round ${roundCounter}`
-  });
-  joinRound.addStage({ name: "joinroom", duration: 10000 });
-
   stims.map(function(stim) {
     if (stim.phase == 'train') {
       if (stim.trialid == 1) {
         roundCounter = 1
         const instructRound = game.addRound({
-          name: `Instructions for Phase 1: Memorization`,
+          name: `Round ${roundCounter}`,
           instructions: 'train'
         });
         instructRound.addStage({ name: "instructions", duration: 10000 })
@@ -107,7 +103,7 @@ Empirica.onGameStart(({ game }) => {
     if (stim.phase == 'recall') {
       if (stim.trialid == 1) {
         const instructRound = game.addRound({
-          name: `Instructions for Phase 2: Recall`,
+          name: `Round ${roundCounter}`,
           instructions: 'recall'
         });
         instructRound.addStage({ name: "instructions", duration: 10000 })
@@ -123,7 +119,7 @@ Empirica.onGameStart(({ game }) => {
     if (stim.phase == 'example') {
       if (stim.trialid == 1) {
         const instructRound = game.addRound({
-          name: `Instructions for Phase 3: Choice`,
+          name: `Round ${roundCounter}`,
           instructions: 'choice'
         });
         instructRound.addStage({ name: "instructions", duration: 10000 })
@@ -133,6 +129,7 @@ Empirica.onGameStart(({ game }) => {
         target: stim.target,
         images: stim.images.split(","),
         verb: stim.verb,
+        label: stim.label,
         guesserOrder: _.shuffle(stim.images.split(",")),
         directorOrder: _.shuffle(stim.images.split(",")),
         instructions: null
@@ -144,16 +141,23 @@ Empirica.onGameStart(({ game }) => {
     if (stim.phase == 'choice') {
       if (stim.trialid == 1) {
         const instructRound = game.addRound({
-          name: `Instructions for Phase 3: Choice`,
+          name: `Round ${roundCounter}`,
           instructions: 'choice'
         });
         instructRound.addStage({ name: "instructions", duration: 10000 })
+
+        const joinRound = game.addRound({
+          name: `Round ${roundCounter}`,
+          instructions: null
+        });
+        joinRound.addStage({ name: "joinroom", duration: 10000 });
       }
       const round = game.addRound({
         name: `Round ${roundCounter}`,
         target: stim.target,
         images: stim.images.split(","),
         verb: stim.verb,
+        label: stim.label,
         guesserOrder: _.shuffle(stim.images.split(",")),
         directorOrder: _.shuffle(stim.images.split(",")),
         instructions: null

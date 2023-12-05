@@ -10,16 +10,16 @@ export function Instructions() {
     round.get("instructions") == "choice" ? 'Phase 3: Choice' : null;
   const li1 = round.get("instructions") == "train" ? `In this phase, you will see a series of images. Each image has a corresponding label.` :
     round.get("instructions") == "recall" ? `In this phase, you will see the same images from the previous phase, without their corresponding labels.` :
-    round.get("instructions") == "choice" & player.get("role") == 'director' ? `You are the director. In each round of this phase, you will see a set of four images, one of which is highlighted.` :
-    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? `You are the ${<strong>guesser</strong>}. In each round of this last phase, you will see a set of four images. The other participant (the director), has one of these images highlighted.` : null;
+    round.get("instructions") == "choice" & player.get("role") == 'director' ? <span>You are the <b>director</b>. In each round of this phase, you will see a set of four images, one of which is highlighted.</span> :
+    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? <span>You are the <b>guesser</b>. In each round of this last phase, you will see four images. The other participant has one of these images highlighted.</span> : null;
   const li2 = round.get("instructions") == "train" ? `Memorize the label for each image to the best of your ability.` :
     round.get("instructions") == "recall" ? `Correctly label each image to the best of your ability.` :
-    round.get("instructions") == "choice" & player.get("role") == 'director' ? `You need to communicate to the other participant, the guesser, which image is the target.` :
-    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? `You need to communicate with the other participant to figure out which image is the target. Once you have determined the target, click on it.` : null;
+    round.get("instructions") == "choice" & player.get("role") == 'director' ? <span>You need to communicate to the other participant, the guesser, which image is the target using <b>full sentences.</b></span> :
+    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? <span>You need to communicate with the other participant to figure out which image is the target. Once you have determined the target, click on it.</span> : null;
   const li3 = round.get("instructions") == "train" ? `Once you have memorized the label for one image, click continue to move to the next.` :
     round.get("instructions") == "recall" ? `Once you have labelled one image, click submit to move to the next.` :
-    round.get("instructions") == "choice" & player.get("role") == 'director' ? `To speak to the other participant, click join to join an audio call.` :
-    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? `To speak to the other participant, click join to join an audio call.` : null;
+    round.get("instructions") == "choice" & player.get("role") == 'director' ? `You will be in an audio call with the other participant throughout this phase.` :
+    round.get("instructions") == "choice" & player.get("role") == 'guesser' ? `You will be in an audio call with the other participant throughout this phase.` : null;
 
   return (
     <div className="mt-3 sm:mt-5 p-50">

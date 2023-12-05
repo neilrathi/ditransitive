@@ -11,36 +11,13 @@ factors:
     - name: templateID
       values:
         - value: 64c8a8e0b91f7e0f7b84ecf1
-    - name: condition
-      values:
-        - value: cchhl
-        - value: ccllh
-        - value: hhccl
-        - value: hhllc
-        - value: llcch
-        - value: llhhc
-        - value: test
     - name: managementToken
       values:
-        - value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+        - value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNzM2NzksImV4cCI6MTcwMTE2MDA3OSwianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDEwNzM2NzksImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.4LT0-T0qesC9TAPKDcCXXHOgfxyt11XdvNxEPy8Ab0c
 treatments:
     - name: Two Players
       desc: Two-player Game
       factors:
-        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
-        playerCount: 2
-        templateID: 64c8a8e0b91f7e0f7b84ecf1
-    - name: CCHHL
-      desc: Two-player (CCHHL)
-      factors:
-        condition: cchhl
-        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
-        playerCount: 2
-        templateID: 64c8a8e0b91f7e0f7b84ecf1
-    - name: test
-      desc: Two-player (test)
-      factors:
-        condition: test
-        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0Mjk1OTcsImV4cCI6MTcwMDUxNTk5NywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDA0Mjk1OTcsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.hY__xWxEusySbTfyODDfrNVJ9UMJjHIR4W20WdzK3kU
+        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNzM2NzksImV4cCI6MTcwMTE2MDA3OSwianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDEwNzM2NzksImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.4LT0-T0qesC9TAPKDcCXXHOgfxyt11XdvNxEPy8Ab0c
         playerCount: 2
         templateID: 64c8a8e0b91f7e0f7b84ecf1

@@ -10,7 +10,7 @@ export function Train() {
     <div>
       <table>
         <tr>
-          <td style = {{paddingRight: "10px"}}> Memorize the corresponding name of this character. You will be asked to recall this name in a later stage. </td>
+          <td style = {{paddingRight: "10px"}}> Memorize the name of this image. </td>
           <td> <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button> </td>
         </tr>
       </table>
