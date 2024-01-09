@@ -8,6 +8,7 @@ export function InstructionsBar() {
 
   const phase = round.get("instructions") == "recall" ? `2: Recall` :
                 round.get("instructions") == "train" ? `1: Memorization` :
+                round.get("instructions") == "example" ? `3: Choice` :
                 round.get("instructions") == "choice" ? `3: Choice` : null
 
   return (

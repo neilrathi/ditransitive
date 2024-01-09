@@ -9,7 +9,8 @@ export function AudioRoom({
   userName,
   roomCode,
   className = "",
-  forceJoin = false
+  forceJoin = false,
+  handleClick
 }) {
   const hmsActions = useHMSActions();
 
@@ -24,12 +25,21 @@ export function AudioRoom({
     }
   };
 
+  const handleClickWrapper = () => {
+    handleSubmit();
+
+    // Check if handleClick is provided and is a function, then call it
+    if (handleClick && typeof handleClick === 'function') {
+      handleClick();
+    }
+  };
+
   if (forceJoin) {
     handleSubmit();
     return null
   } else {
     return (
-      <button className={`${base} ${className}`} onClick = {handleSubmit}>
+      <button className={`${base} ${className}`} onClick = {handleClickWrapper}>
         Join
       </button>
     );

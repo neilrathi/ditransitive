@@ -3,8 +3,8 @@ import { Button } from "../components/Button";
 
 export function Introduction({ next }) {
   return (
-    <div className="mt-3 sm:mt-5 p-20">
-      <h3 className="text-xl leading-6 font-bold text-gray-900">
+    <div className="mt-3 sm:mt-5 p-20 w-2/3 mx-auto">
+      <h3 className="text-xl leading-6 font-bold text-gray-900 text-center">
         Instructions
       </h3>
       <div className="mt-2 mb-6">
@@ -34,13 +34,15 @@ export function Introduction({ next }) {
         <ul class = 'list-disc list-inside'>
           <li> In this stage, you will be assigned a role: either the <strong>director</strong> or the <strong>guesser</strong></li>
           <li> You will be shown four images. If you are the director, one of these will be labeled as the <strong>target</strong> </li>
-          <li> You will join an audio call with your partner. If you are the <strong>director</strong>, you should describe the target image to the guesser </li>
+          <li> You will join an audio call with your partner. The <strong>director</strong> should describe the target image to the guesser. </li>
           <li> Your goal as a team is to correctly identify the target image. </li>
         </ul>
       </div>
-      <Button handleClick={next} autoFocus>
-        <p>Next</p>
-      </Button>
+      <div className = "flex justify-center">
+        <Button handleClick={next} autoFocus>
+          <p>Next</p>
+        </Button>
+      </div>
     </div>
   );
 }

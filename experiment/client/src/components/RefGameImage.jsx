@@ -18,12 +18,12 @@ export function RefGameImage({
   const round = useRound();
 
   // certain images are highlighted for the director at the 'choice' stage, and for both players at the 'result' stage
-  const highlightImage = (player.get("role") == "director" || stage.get("name") == "result") &
-  (round.get("target") == tag | (stage.get("name") == "result" & round.get("decision") == tag )) 
+  const highlightImage = (player.get("role") == "director" || stage.get("name") == "result" || stage.get("name") == "example-result") &
+  (round.get("target") == tag || (stage.get("name") == "result" & round.get("decision") == tag ) || (stage.get("name") == "example-result" & round.get("decision") == tag )) 
   
   const borderWidth = highlightImage ? "5px" : "0px"
 
-  const borderColor = (stage.get("name") == "choice" | stage.get("name") == "example-choice") ? "black" : round.get("target") == tag ? "green" : "red"
+  const borderColor = (stage.get("name") == "choice" || stage.get("name") == "example-choice") ? "black" : round.get("target") == tag ? "green" : "red"
 
   return (
     <div style = {{width: "200px", border: "solid " + `${borderWidth}` + " " + `${borderColor}`, padding: '2px'}}>

@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 const base =
   "inline-flex flex-col items-center px-4 py-2 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-empirica-500 m-5";
 
-export const AudioTest = () => {
+export const AudioTest = ({ onAudioRecorded }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [audioUrl, setAudioUrl] = useState('');
   const mediaRecorderRef = useRef(null);
@@ -35,6 +35,8 @@ export const AudioTest = () => {
     if (mediaRecorderRef.current) {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
+      // Call the callback function when audio is recorded
+      onAudioRecorded(true);
     }
   };
 

@@ -120,7 +120,7 @@ Empirica.onGameStart(({ game }) => {
       if (stim.trialid == 1) {
         const instructRound = game.addRound({
           name: `Round ${roundCounter}`,
-          instructions: 'choice'
+          instructions: 'example'
         });
         instructRound.addStage({ name: "instructions", duration: 10000 })
       }

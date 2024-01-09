@@ -1,4 +1,4 @@
-import { usePlayer, useStage } from "@empirica/core/player/classic/react";
+import { usePlayer, useStage, useGame } from "@empirica/core/player/classic/react";
 
 import React from "react";
 import { Profile } from "./Profile";
@@ -10,13 +10,14 @@ import { ExampleOptions } from "./components/ExampleOptions";
 import { JoinRoomScreen } from "./components/JoinRoomScreen";
 
 export function Game() {
-
+  
+  const game = useGame()
   const stage = useStage()
   const player = usePlayer()
 
   // show images if on selection/result stage
   const options = stage.get("name") == "result" & player.stage.get("submit") ? null :
-    stage.get("name") == "joinroom" ? <JoinRoomScreen userName = {player.id} roomCode = {player.get("roomCode")} /> :
+    stage.get("name") == "joinroom" ? <JoinRoomScreen userName = {player.id} roomCode = {game.get("roomCode")} /> :
     stage.get("name") == "train" ? <TrainImage /> :
     stage.get("name") == "recall" ? <RecallImage /> :
     stage.get("name") == "instructions" ? <Instructions /> :

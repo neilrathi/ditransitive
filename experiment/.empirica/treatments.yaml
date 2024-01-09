@@ -13,11 +13,11 @@ factors:
         - value: 64c8a8e0b91f7e0f7b84ecf1
     - name: managementToken
       values:
-        - value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNzM2NzksImV4cCI6MTcwMTE2MDA3OSwianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDEwNzM2NzksImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.4LT0-T0qesC9TAPKDcCXXHOgfxyt11XdvNxEPy8Ab0c
+        - value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDQ2OTMyMTMsImV4cCI6MTcwNDc3OTYxMywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDQ2OTMyMTMsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.3D6o_h0CFAviYYvq3EQTJSL2YS8sjQQ-YTh2VwlD5ys
 treatments:
     - name: Two Players
       desc: Two-player Game
       factors:
-        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNzM2NzksImV4cCI6MTcwMTE2MDA3OSwianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDEwNzM2NzksImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.4LT0-T0qesC9TAPKDcCXXHOgfxyt11XdvNxEPy8Ab0c
+        managementToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDQ2OTMyMTMsImV4cCI6MTcwNDc3OTYxMywianRpIjoiand0X25vbmNlIiwidHlwZSI6Im1hbmFnZW1lbnQiLCJ2ZXJzaW9uIjoyLCJuYmYiOjE3MDQ2OTMyMTMsImFjY2Vzc19rZXkiOiI2NGMxYWJhYTkxYzAyM2I0ZTJkNzZlODQifQ.3D6o_h0CFAviYYvq3EQTJSL2YS8sjQQ-YTh2VwlD5ys
         playerCount: 2
         templateID: 64c8a8e0b91f7e0f7b84ecf1

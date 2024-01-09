@@ -9,10 +9,7 @@ export function JoinRoom() {
     <div>
 
       <table>
-        <tr>
-          <td style = {{paddingRight: "10px"}}> You are the {player.get("role")}. Say hi to your partner! </td>
-          <td> <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button> </td>
-        </tr>
+        You are the {player.get("role")}. Say hi to your partner!
       </table>          
 
     </div>
