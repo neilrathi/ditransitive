@@ -46,7 +46,7 @@ export function SpeakerTest({ next }) {
           Your browser does not support the audio element.
         </audio>
       </div>
-      <div className="flex justify-center mt-2 mb-6">
+      <div className="flex justify-center mt-2 mb-2">
         <table>
           <tr>
             <td>
@@ -63,7 +63,11 @@ export function SpeakerTest({ next }) {
             />
             </td>
             <td>
+            {isCorrect ? (
+              <Button handleClick={next} autoFocus>Next</Button>
+            ) : (
               <Button handleClick={checkAnswer} autoFocus>Submit</Button>
+            )}
             </td>
           </tr>
         </table>
@@ -72,7 +76,8 @@ export function SpeakerTest({ next }) {
         {showError && <p className="text-red-500 font-bold">Sorry, please check your speaker and try again!</p>}
       </div>
       {isCorrect && (<div className = 'flex justify-center mt-2 mb-6'>
-        <Button handleClick={next} autoFocus>Next</Button></div>
+        <p className="text-green-500 font-bold">Perfect, please continue!</p>
+        </div>
       )}
     </div>
   );

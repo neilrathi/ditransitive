@@ -21,14 +21,12 @@ export function JoinRoomScreen({
     <div>
       <p>Click to join an audio call with your partner for Phase 3.</p>
       <div className = "flex justify-center m-5">
-      {isAudioRoomClicked ? (
-          <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button>
-        ) : (
-          <AudioRoom userName = {userName} roomCode = {roomCode} forceJoin = {false} handleClick={audioRoomClick}/>
-        )}
-        
+        <AudioRoom userName = {userName} roomCode = {roomCode} forceJoin = {false} handleClick={audioRoomClick}/>        
       </div>
       <p>Continue to the next round when you've successfully joined the call.</p>
+      <div className = "flex justify-center m-5">
+        {isAudioRoomClicked && <Button handleClick={() => player.stage.set("submit", true)}> Continue </Button>}
+      </div>
     </div>
   );
 }  

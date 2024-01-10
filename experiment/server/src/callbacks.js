@@ -37,7 +37,8 @@ Empirica.on("batch", "status", (ctx, { batch, status }) => {
       
           const roomId = getRoom.data.id;
           const getCode = await axiosInstance.post(`room-codes/room/${roomId}`);
-          const roomCode = String(getCode.data.data[0].code)
+          const roomCodeList = getCode.data.data
+          const roomCode = roomCodeList.find(({role}) => role == "speaker").code
 
           game.set("roomCode", roomCode)
 

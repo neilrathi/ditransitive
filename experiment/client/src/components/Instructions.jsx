@@ -7,7 +7,7 @@ export function Instructions() {
   const player = usePlayer();
   const title = round.get("instructions") == "train" ? 'Phase 1: Memorization' :
     round.get("instructions") == "recall" ? 'Phase 2: Recall' :
-    round.get("instructions") == "example" ? 'Phase 3: Choice (Examples)' : null;
+    round.get("instructions") == "example" ? 'Phase 3: Choice (Examples)' :
     round.get("instructions") == "choice" ? 'Phase 3: Choice' : null;
   const li1 = round.get("instructions") == "train" ? `In this phase, you will see a series of images. Each image has a corresponding label.` :
     round.get("instructions") == "recall" ? `In this phase, you will see the same images from the previous phase, without their corresponding labels.` :
@@ -32,7 +32,8 @@ export function Instructions() {
 
   return (
     <div className="mt-3 sm:mt-5 p-50">
-      <h2><strong>{title}</strong></h2>
+      <h2 className = "text-center text-lg mb-2"><strong>{title}</strong></h2>
+      <p className = "text-center text-sm mb-2 text-red-500 font-bold">Read these instructions carefully.</p>
       <ul className="list-disc list-inside">
         <li> {li1} </li>
         <li> {li2} </li>

@@ -14,27 +14,41 @@ export function ExitSurvey({ next }) {
   const [strength, setStrength] = useState("");
   const [fair, setFair] = useState("");
   const [feedback, setFeedback] = useState("");
-  const [education, setEducation] = useState("");
+  const [taskCorrectly, setTaskCorrectly] = useState("");
+  const [nativeLanguage, setNativeLanguage] = useState("");
+  const [enjoyment, setEnjoyment] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault()
     player.set("exitSurvey", {
       age,
       gender,
+      nativeLanguage,
       strength,
       fair,
       feedback,
-      education,
+      taskCorrectly,
+      enjoyment,
     });
     next();
   }
 
-  function handleEducationChange(e) {
-    setEducation(e.target.value);
+  function handleTaskCorrectlyChange(e) {
+    setTaskCorrectly(e.target.value);
+  }
+  function handleEnjoymentChange(e) {
+    setEnjoyment(e.target.value);
   }
 
   return (
     <div className="py-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Alert title="Completion Code">
+        <p>
+          Please submit the following prolific completion code:{" "}
+          <strong>C107HBJE</strong>.
+        </p>
+      </Alert>
+
       <form
         className="mt-12 space-y-8 divide-y divide-gray-200"
         onSubmit={handleSubmit}
@@ -46,13 +60,30 @@ export function ExitSurvey({ next }) {
                 Exit Survey
               </h3>
               <p className="mt-1 text-sm text-gray-500">
-                Please answer the following short survey. Answering these questions is optional, but will help us understand your answers.
+              Thank you for completing the experiment! These questions are optional.
               </p>
             </div>
 
             <div className="space-y-8 mt-6">
               <div className="flex flex-row">
-                <div>
+                <div >
+                  <label htmlFor="email" className={labelClassName}>
+                    Native Language
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="nativeLanguage"
+                      name="nativeLanguage"
+                      autoComplete="off"
+                      className={inputClassName}
+                      value={nativeLanguage}
+                      onChange={(e) => setNativeLanguage(e.target.value)}
+                    />
+                  </div>
+                </div>
+                
+                
+                <div className="ml-5">
                   <label htmlFor="email" className={labelClassName}>
                     Age
                   </label>
@@ -84,54 +115,77 @@ export function ExitSurvey({ next }) {
                   </div>
                 </div>
               </div>
+              
 
               <div>
                 <label className={labelClassName}>
-                  Highest Educational Qualification
+                Did you read the instructions and do you think you did the task correctly?
                 </label>
                 <div className="grid gap-2">
                   <Radio
-                    selected={education}
-                    name="education"
-                    value="high-school"
-                    label="High School"
-                    onChange={handleEducationChange}
+                    selected={taskCorrectly}
+                    name="taskCorrectly"
+                    value="Yes"
+                    label="Yes"
+                    onChange={handleTaskCorrectlyChange}
                   />
                   <Radio
-                    selected={education}
-                    name="education"
-                    value="bachelor"
-                    label="US Bachelor's Degree"
-                    onChange={handleEducationChange}
+                    selected={taskCorrectly}
+                    name="taskCorrectly"
+                    value="No"
+                    label="No"
+                    onChange={handleTaskCorrectlyChange}
                   />
                   <Radio
-                    selected={education}
-                    name="education"
-                    value="master"
-                    label="Master's or higher"
-                    onChange={handleEducationChange}
+                    selected={taskCorrectly}
+                    name="taskCorrectly"
+                    value="I was confused"
+                    label="I was confused"
+                    onChange={handleTaskCorrectlyChange}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className={labelClassName}>
+                Did you enjoy the experiment?
+                </label>
+                <div className="grid gap-2">
+                  <Radio
+                    selected={enjoyment}
+                    name="enjoyment"
+                    value="yesEnjoy"
+                    label="Yes"
+                    onChange={handleEnjoymentChange}
                   />
                   <Radio
-                    selected={education}
-                    name="education"
-                    value="other"
-                    label="Other"
-                    onChange={handleEducationChange}
+                    selected={enjoyment}
+                    name="enjoyment"
+                    value="NoEnjoy"
+                    label="No"
+                    onChange={handleEnjoymentChange}
+                  />
+                  <Radio
+                    selected={enjoyment}
+                    name="enjoyment"
+                    value="BetterEnjoy"
+                    label="Better than Average Experiment"
+                    onChange={handleEnjoymentChange}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-x-6 gap-y-3">
                 <label className={labelClassName}>
-                  What is your native language (the language spoke(n) at home when you were a child)?
+                  Did you enjoy doing an experiment with a partner? 
                 </label>
 
                 <label className={labelClassName}>
-                  Do you feel the pay for this work was fair?
+                  Do you feel the pay was fair?
                 </label>
 
                 <label className={labelClassName}>
-                  Were there any problems or bugs in the experiment? Any additional comments?
+                  Feedback, including problems you encountered.
                 </label>
 
                 <textarea

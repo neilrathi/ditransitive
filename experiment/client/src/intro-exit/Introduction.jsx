@@ -9,10 +9,17 @@ export function Introduction({ next }) {
       </h3>
       <div className="mt-2 mb-6">
         <p>
-          This game has three parts. You will be paired up with another participant for all three parts. For each round, you and your partner must both complete the round before moving to the next one together.
+          This game has three parts. You will be paired up with another participant for all three parts. For each round, you and your partner must both complete the round before moving to the next one together (even for tasks where you are not directly interacting).
         </p>
         <br></br>
-        <h4 className="text-lg leading-6 font-medium text-gray-900">
+        <ul className = 'list-disc list-inside'>
+          <li> Stage One: <strong>Memorize</strong> the names of some objects. </li>
+          <li> Stage Two: <strong> Test </strong> your memory of the names you just learned. </li>
+          <li> Stage Three: <strong> Communicate </strong> with your partner about some images, using the names you just learned. </li>
+        </ul>
+        <br></br>
+        <p>First, we need to test your mic and speaker.</p>
+        {/*<h4 className="text-lg leading-6 font-medium text-gray-900">
           Stage One:
         </h4>
         <ul class = 'list-disc list-inside'>
@@ -36,7 +43,7 @@ export function Introduction({ next }) {
           <li> You will be shown four images. If you are the director, one of these will be labeled as the <strong>target</strong> </li>
           <li> You will join an audio call with your partner. The <strong>director</strong> should describe the target image to the guesser. </li>
           <li> Your goal as a team is to correctly identify the target image. </li>
-        </ul>
+        </ul>*/}
       </div>
       <div className = "flex justify-center">
         <Button handleClick={next} autoFocus>
