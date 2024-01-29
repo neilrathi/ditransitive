@@ -42,7 +42,7 @@ export function SpeakerTest({ next }) {
       </div>
       <div className = 'text-center'>
         <audio className = {base} controls>
-          <source src="../../public/test_audio.m4a" type="audio/mpeg" />
+          <source src="../../test_audio.m4a" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>

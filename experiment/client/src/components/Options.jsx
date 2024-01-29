@@ -22,7 +22,7 @@ export function Options() {
   
     return (
 
-        <div className="justify-center m-5">
+        <div className="justify-center m-3">
 
           <table>
             <tbody>
@@ -37,7 +37,7 @@ export function Options() {
             </tbody>
           </table>
           
-          <div className="flex justify-center m-5">
+          <div className="flex justify-center m-3">
             <strong className = 'text-2xl'>{verb}</strong>
           </div>
 

@@ -254,9 +254,9 @@ for cond in conditions:
             elif i <= 2 * len(all_chars_list):
                 writer.writerow([i - len(all_chars_list), 'recall', row] + 4 * ['NA'])
             elif i <= 2 * len(all_chars_list) + 1:
-                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The waitress dropped the banana'] + row)
+                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The waitress dropped the banana', row[0], 'waitress-drop-banana', 'drop', 'train'])
             elif i <= 2 * len(all_chars_list) + 2:
-                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The chef decorated the cake'] + row)
+                writer.writerow([i - 2 * len(all_chars_list), 'example', 'The chef decorated the cake', row[0], 'chef-decorate-cake', 'decorate', 'train'])
             else:
                 writer.writerow([i - 2 * len(all_chars_list) - 2, 'choice', 'NA'] + row)
             i += 1

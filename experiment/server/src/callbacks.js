@@ -76,7 +76,7 @@ Empirica.onGameStart(({ game }) => {
   const csv=require('csvtojson');
 
   const stims = csv()
-  .fromFile(`./src/stims-${condition}.csv`)
+  .fromFile(`./stims-${condition}.csv`)
   .then((jsonObj)=>{
       return(jsonObj);
   })
@@ -171,7 +171,7 @@ Empirica.onGameStart(({ game }) => {
 });
 
 Empirica.onRoundStart(({ round }) => {
-  console.log(round.get("name"))
+  console.log(`Game ${round.currentGame.id}: ${round.get("name")}`)
   const cur_date = new Date();
   const old_timestamps = round.currentGame.get("timestamps")
   old_timestamps.push(cur_date)

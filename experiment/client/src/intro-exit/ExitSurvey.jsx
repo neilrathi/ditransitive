@@ -45,7 +45,7 @@ export function ExitSurvey({ next }) {
       <Alert title="Completion Code">
         <p>
           Please submit the following prolific completion code:{" "}
-          <strong>C107HBJE</strong>.
+          <strong>CQFB6UT7</strong>.
         </p>
       </Alert>
 
