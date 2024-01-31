@@ -1,107 +1,116 @@
-library(tidyverse)
-library(extrafont) # font embedding
-library(gridExtra)
-library(viridis)
 rm(list=ls())
 setwd("~/csboy/ditransitive/analysis")
 
-df <- read.csv('complete.csv', sep = '\t')
+library(tidyverse)
+library(extrafont) # font embedding
 
+library(lme4)
+library(boot)
+library(ggthemes)
+
+### IMPORT DATAFRAME ###
+df <- read.csv('complete_clean.csv', sep = '\t')
+df$item <- paste(df$agent, df$verb, df$theme, df$recipient)
+
+### COMPUTE MIXED EFFECTS LOGISTIC REGRESSION ###
+model <- glmer(factor(order) ~ informativity +
+                 (1 + informativity || gameID) +
+                 (1 + informativity || item),
+               data = df,
+               family = "binomial")
+
+### PLOTS + BOOTSTRAP STATISTICS ###
 df %>%
   count(order)
 
-ggplot(df, aes(x = order, fill = order)) +
-  geom_bar(stat = 'count') +
-  facet_wrap(~ verb, nrow = 2) +
-  theme_minimal()
+# get actual proportions
+by_verb_actual <- df %>%
+  group_by(verb) %>%
+  summarize(
+    PO_actual = sum(order == "PO") / n(),
+    DO_actual = sum(order == "DO") / n()
+  )
 
-ggplot(df, aes(x = order, fill = order)) +
-  geom_bar(stat = 'count') +
-  facet_wrap(~ factor(informativity, levels = c('control', 'low', 'high')))
+by_informativity_actual <- df %>%
+  group_by(informativity) %>%
+  summarize(
+    PO_actual = sum(order == "PO") / n(),
+    DO_actual = sum(order == "DO") / n()
+  )
 
-df <- df %>%
-  mutate(verb_informativity = interaction(verb, factor(informativity, levels = c('control', 'low', 'high')), sep = " - "))
-
-ggplot(df, aes(x = order, fill = order)) +
-  geom_bar(stat = 'count') +
-  facet_wrap(~ verb_informativity, nrow = 3)
-
-library(rwebppl)
-
-dfs <- list()
-informativities = c('low', 'med', 'high')
-priors <- c(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75)
-costs <- c(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75)
-for (i in informativities) {
-  idf <- data.frame(double(), double(), double(), double())
-  names(idf) <- c('prior', 'cost', 'informativity', 'prob')
-  for (p in priors) {
-    for (cost in costs) {
-      settings <- data.frame(recipientprior = p, recipientcost = cost, informativity = i)
-      output <- c(webppl(program_file = 'models/model.js', data = settings, data_var = "dataFromR"))
-      idf[nrow(idf) + 1,] <- c(p, cost, i, data.frame(prob = output)[1, 'prob'])
-    }
-  }
-  dfs[[i]] <- idf
+# bootstrap 95% CI by condition
+prop <- function(data, indices) {
+  dt <- data[indices, ]
+  prop_PO <- sum(dt$order == "PO") / nrow(dt)
+  prop_DO <- sum(dt$order == "DO") / nrow(dt)
+  c(prop_PO,
+    prop_DO)
 }
 
-combined_df <- do.call(rbind, dfs)
-combined_df$prior <- as.numeric(combined_df$prior)
-combined_df$cost <- as.numeric(combined_df$cost)
-combined_df$prob <- as.numeric(combined_df$prob)
-combined_df$informativity <- factor(combined_df$informativity)
+set.seed(12345)
 
-ggplot(combined_df, aes(x = prior, y = cost, fill = prob)) +
-  geom_ti() +
-  scale_fill_viridis() +
-  labs(x = "prior probability of recipient", y = "cost of recipient", fill = "probability") +
-  facet_wrap(~factor(informativity, levels=c('low', 'med', 'high')))
+by_verb_ci <- df %>% 
+  group_by(verb) %>% 
+  do({
+    boot_verb <- boot(data = .,
+                      statistic = prop,
+                      R = 1000)
+    
+    ci_PO <- boot.ci(boot_verb, type = "perc", index = 1)
+    ci_DO <- boot.ci(boot_verb, type = "perc", index = 2)
+    
+    data.frame(verb = unique(.$verb),
+               PO_lower = ci_PO$perc[4],
+               PO_upper = ci_PO$perc[5],
+               DO_lower = ci_DO$perc[4],
+               DO_upper = ci_DO$perc[5])
+  })
 
-ggplot(combined_df, aes(x = prior, y = prob)) +
-  geom_bar(stat = 'identity') +
-  facet_wrap(~factor(informativity, levels=c('low', 'med', 'high')))
+by_informativity_ci <- df %>% 
+  group_by(informativity) %>% 
+  do({
+    boot_verb <- boot(data = .,
+                      statistic = prop,
+                      R = 1000)
+    
+    ci_PO <- boot.ci(boot_verb, type = "perc", index = 1)
+    ci_DO <- boot.ci(boot_verb, type = "perc", index = 2)
+    
+    data.frame(informativity = unique(.$informativity),
+               PO_lower = ci_PO$perc[4],
+               PO_upper = ci_PO$perc[5],
+               DO_lower = ci_DO$perc[4],
+               DO_upper = ci_DO$perc[5])
+  })
 
-for (df in dfs) {
-  combined_df <- bind_rows(combined_df, df, .id = "source")
-}
 
-ggsave("plots/probabilities_likely.pdf", g, width=6, height=6, units = "in", dpi = 300)
+by_verb <- left_join(by_verb_actual, by_verb_ci, by = "verb")
+by_informativity <- left_join(by_informativity_actual, by_informativity_ci, by = "informativity")
 
 
-dfs <- list()
-informativities = c('low', 'high')
-for (i in informativities) {
-  idf <- data.frame(double(), double(), double())
-  names(idf) <- c('informativity', 'prob', 'tr')
-  settings <- data.frame(informativity = i)
-  output <- c(webppl(program_file = 'models/simple_model.js', data = settings, data_var = "dataFromR"))
-  idf[nrow(idf) + 1,] <- c(i, data.frame(prob = output)[1, 'prob'], 'recipient')
-  idf[nrow(idf) + 1,] <- c(i, data.frame(prob = output)[2, 'prob'], 'theme')
-  dfs[[i]] <- idf
-}
+# long versions of each df for plotting
+long_by_verb <- by_verb %>%
+  gather(key = "measure", value = "value", PO_actual:DO_upper) %>%
+  separate(measure, into = c("order", "measure"), sep = "_") %>%
+  spread(key = "measure", value = "value")
 
-combined_df <- do.call(rbind, dfs)
-combined_df$prob <- as.numeric(combined_df$prob)
-combined_df$informativity <- factor(combined_df$informativity)
+long_by_informativity <- by_informativity %>%
+  gather(key = "measure", value = "value", PO_actual:DO_upper) %>%
+  separate(measure, into = c("order", "measure"), sep = "_") %>%
+  spread(key = "measure", value = "value")
 
-small_df <- data.frame(informativity = c("control", "control"), prob = c(0.5, 0.5), tr = c("recipient", "theme"))
-total_df <- rbind(combined_df, small_df)
+ggplot(long_by_verb, aes(x = order, fill = order, y = actual, ymin = lower, ymax = upper)) +
+  geom_col() +
+  scale_fill_manual("legend", values = c("#d78691",  "#72b072")) +
+  geom_errorbar(width = 0.2) +
+  facet_wrap(~ verb) +
+  labs(x = "order", y = "prop") +
+  theme_bw()
 
-ggplot(total_df, aes(x = tr, y = prob, fill = tr)) +
-  geom_bar(stat = 'identity') +
-  ylab('Production Probability') +
-  xlab('Constituent') +
-  theme(legend.position="bottom",
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.ticks.x=element_blank(),
-        legend.title = element_blank()) +
-  facet_wrap(~factor(informativity, levels=c('control', 'low', 'med', 'high'))) +
-  scale_y_continuous(breaks = seq(0, 1, .1), limits = c(0, 1)) +
-  geom_hline(yintercept = 0, linewidth = .3)
-
-for (df in dfs) {
-  combined_df <- bind_rows(combined_df, df, .id = "source")
-}
-
-ggsave("plots/informativity.png", width=6, height=4, units = "in", dpi = 300)
+ggplot(long_by_informativity, aes(x = order, fill = order, y = actual, ymin = lower, ymax = upper)) +
+  geom_col() +
+  scale_fill_manual("legend", values = c("#d78691",  "#72b072")) +
+  geom_errorbar(width = 0.2) +
+  facet_wrap(~ informativity) +
+  labs(x = "order", y = "prop") +
+  theme_bw()

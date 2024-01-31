@@ -1,0 +1,113 @@
+verb	sentence	agent	theme	recipient	informativity	order	gameID	audio_file
+toss	The cowboy tosses the banana to the clown, okay.	cowboy	banana	clown	high	PO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+show	The waitress shows the apple to the clown, okay.	waitress	apple	clown	control	PO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+offer	The artist offers the doctor the book, okay.	artist	book	doctor	low	DO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+sell	The chef sells the book to the doctor.	chef	book	doctor	low	PO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+throw	The cowboy throws the gun to the doctor.	cowboy	gun	doctor	high	PO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+give	The pirate gives the apple to the monk.	pirate	apple	monk	control	PO	01HN6C87KF59S14B1W3XFECQKP	bed3acbd-eb9f-4052-9ed3-a0750b6ab966.mp4
+offer	The monk was offered a banana.	cowboy	banana	monk	high	DO	01HN6C8A9KRAEBTQP8P9G9JWXP	8a403aee-d642-4cc1-8d86-3d9e8dd01594.mp4
+toss	The ball was tossed to the clown.	cowboy	ball	clown	low	PO	01HN6C8A9KRAEBTQP8P9G9JWXP	8a403aee-d642-4cc1-8d86-3d9e8dd01594.mp4
+give	The pirate gave the monk an apple.	pirate	apple	monk	control	DO	01HN6C8A9KRAEBTQP8P9G9JWXP	8a403aee-d642-4cc1-8d86-3d9e8dd01594.mp4
+offer	The artist offered the book to the doctor.	artist	book	doctor	low	PO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+sell	The pirate sold the ball to the clown.	pirate	ball	clown	high	PO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+show	The waitress showed the apple to the clown.	waitress	apple	clown	control	PO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+give	The pirate gave the apple to the doctor.	pirate	apple	doctor	high	PO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+throw	The cowboy threw the book at the boxer.	cowboy	book	boxer	low	PO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+toss	The cowboy tossed the banana to the...	cowboy	banana	soldier	control	DO	01HN6C8BGFFPXYNEXBJ7SXB5H1	{a8c22c05-bd2a-4913-9b13-9c6aeacbe155}.mp4
+show	to do the sentence, right? All right, so the waitress showed the apple to the	waitress	apple	clown	control	DO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+give	clown. Yay! The pirate smelled at the monk. The chef gave the ball to the monk.	chef	ball	monk	low	DO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+toss	Okay, good. The, I think it's, the cowboy tossed the banana. There you go. The	cowboy	banana	soldier	control	DO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+throw	waitress ran towards the soldier. The cowboy threw the book at the boxer. The	cowboy	book	boxer	low	PO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+sell	pirate sold the ball to the clown. The princess, I think ballerina actually, bit	pirate	ball	clown	high	PO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+offer	cowboy offered the banana to the monk. Okay, and here we go. There's our last one. The chef laughed	cowboy	banana	monk	high	PO	01HN6C8BVXBN026JSVP2C73R5K	b02b171d-f31c-468a-a10f-0927d11e09e0.mp4
+sell	Let's see, the chef sells a cake to the sailor.	chef	cake	sailor	control	PO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+give	The artist gives the doctor a book.	pirate	apple	monk	control	DO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+give	The pirate gives an apple to the monk.	pirate	apple	monk	control	PO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+toss	The cowboy tosses a banana to the clown.	cowboy	banana	clown	high	PO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+throw	The cowboy throws a gun at the doctor.	cowboy	gun	doctor	high	PO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+show	The pirate, oh goodness, the pirate shows the, I don't know what the label was for that one,	pirate	book	soldier	low	DO	01HN6C8E6H53D3JBHFEK6KPNQ3	decec88e-6ed1-4c5e-b06f-ff42ec21beb1.mp4
+give	Let's see, the pirate gives an apple to the monk. Perfect. Okay, let's see, so this image,	pirate	apple	monk	control	PO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+sell	the palette. Okay, the cowboy throws the gun at the doctor. Perfect. Okay, the chef sells	chef	book	doctor	low	PO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+throw	the palette. Okay, the cowboy throws the gun at the doctor. Perfect. Okay, the chef sells	cowboy	gun	doctor	high	PO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+show	a book to the doctor. Perfect. Okay, the chef cuts the cake. Okay, the pirate shows a book	pirate	book	soldier	low	DO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+offer	to a soldier. Are you still there? Okay. Okay. The artist offers an apple to the sailor.	artist	apple	sailor	control	PO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+toss	Okay, the cowboy tosses a banana at the clown. Okay, the waitress touches the swimmer.	cowboy	banana	clown	high	PO	01HN6H3QCQZ61YH3XV2MF52VGT	6af18531-0c03-4bd3-8c75-578d29840aa6.mp4
+offer	A man in a beret offers a book to a doctor. The waitress is offering a banana to the doctor,	artist	book	doctor	low	PO	01HN6H3RTG33PS5KE0V5A3KPJF	{af33ef68-e162-4dfc-8ae3-9ddc7698f1f3}.mp4
+throw	The cowboy will throw the book to the boxer.	cowboy	book	boxer	low	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+toss	The cowboy will toss the banana to the soldier.	cowboy	banana	soldier	control	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+give	The pirate will give the apple to the doctor.	pirate	apple	doctor	high	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+offer	The cowboy will offer the banana to the monk.	cowboy	banana	monk	high	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+show	The pirate will show the book to the soldier.	pirate	book	soldier	low	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+sell	The chef will sell the cake to the sailor.	chef	cake	sailor	control	PO	01HN6H3SA4W1KPPJTNY6PXFG1A	113ed962-1e4a-4929-a187-89257f90860c.mp4
+offer	Hi. Hello. Yeah. Same. Okay. Okay. I think this is the artist offers the apple to the	artist	apple	sailor	control	DO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+give	sailor. Yes. The chef laughs at the burglar. Okay. Yes. The chef gives the ball to the	chef	ball	monk	low	DO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+sell	The pirate sells the ball to the clown. I think there's a delay. It's not showing me	pirate	ball	clown	high	PO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+show	gun. Okay. The pirate shows the book to the soldier. Right. The chef burns his hat. Okay.	pirate	book	soldier	low	PO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+throw	The artist examines the palette. Okay. The chef cuts the cake. Okay. The ballerina throws	ballerina	hat	swimmer	control	DO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+toss	to the soldier. Okay. The cowboy tosses the banana to the clown. All right. The chef fights	cowboy	banana	clown	high	PO	01HN6H3SFREDCR8CQGB1J3Z3Y1	2e9bf6e2-5090-4589-b3ec-4d5609f4751a.mp4
+show	Okay, the pirate showed the book to the soldier.	pirate	book	soldier	low	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+offer	The cowboy offered the banana to the monk.	cowboy	banana	monk	high	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+toss	The cowboy tossed the banana to the soldier.	cowboy	banana	soldier	control	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+throw	The cowboy threw the gun to the doctor.	cowboy	gun	doctor	high	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+give	The pirate gave the apple to the monk.	pirate	apple	monk	control	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+give	The pirate gave the apple to the monk.	pirate	apple	monk	control	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+sell	The chef sold the book to the doctor.	chef	book	doctor	low	PO	01HN6H5QK3ZWR40Y69SBWTVRF5	05762e45-d6e2-41fd-aa67-868276ac2c7a.mp4
+sell	The chef sold the cake to the salesman.	chef	cake	sailor	control	DO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+throw	The cowboy threw the book to the boxer.	cowboy	book	boxer	low	PO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+offer	The artist offered the apple to the sailor.	artist	apple	sailor	control	PO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+show	The waitress showed the banana to the doctor.	waitress	banana	doctor	high	PO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+toss	The cowboy tossed the banana to the clown.	cowboy	banana	clown	high	PO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+give	The chef gave the ball to the monk.	chef	ball	monk	low	PO	01HN6HARA7PSTWVSAXRN0V7Y20	6fde4fd9-8643-4044-b6ff-804ae88dd9aa.mp4
+toss	Hello? Hello? Okay. Okay, yeah. Okay, the cowboy tossed the ball to the clown. Okay,	cowboy	ball	clown	low	PO	01HN6HAV6HAZVME5JMHKBF3ZEN	{cf20a282-32c4-4106-8890-7567aed044b2}.mp4
+give	the chef's hat was burning. Okay, the pirate gave the apple to the doctor. Give.	pirate	apple	doctor	high	PO	01HN6HAV6HAZVME5JMHKBF3ZEN	{cf20a282-32c4-4106-8890-7567aed044b2}.mp4
+show	the palette. Palette. Yeah, yeah, that one got me. Uh, waitress shows apple to a clown.	waitress	apple	clown	control	PO	01HN6HAV6HAZVME5JMHKBF3ZEN	{cf20a282-32c4-4106-8890-7567aed044b2}.mp4
+throw	Okay, uh, cowboy throws book to the, uh, boxer. Yeah. Chef laughs at burglar.	cowboy	book	boxer	low	PO	01HN6HAV6HAZVME5JMHKBF3ZEN	{cf20a282-32c4-4106-8890-7567aed044b2}.mp4
+offer	Uh, chef cut cake. Nice. Uh, cowboy offered banana to monk. Okay. Oh, wow. Yay.	cowboy	banana	monk	high	PO	01HN6HAV6HAZVME5JMHKBF3ZEN	{cf20a282-32c4-4106-8890-7567aed044b2}.mp4
+sell	The chef sells the cake to the sailor.	chef	cake	sailor	control	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+throw	The cowboy throws the book at the boxer.	cowboy	book	boxer	low	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+offer	The artist offers an apple to the sailor.	artist	apple	sailor	control	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+show	The waitress shows a banana to the doctor.	waitress	banana	doctor	high	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+toss	The cowboy tosses a banana at the clown.	cowboy	banana	clown	high	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+give	The chef gives the ball to the monk.	chef	ball	monk	low	PO	01HN908023TPGC6MNFRW5V7B9P	bbb7d2c3-7dcf-4cfe-bb13-d512480da671.mp4
+give	Hello? Are you there? Okay, I'm gonna hit continue. Okay. Okay, the chef gives the ball	chef	ball	monk	low	DO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+show	Okay. I think it's just slow, probably. Me either. Okay, the waitress shows the apple	waitress	apple	clown	control	DO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+offer	cowboy tosses the banana to the clown. Okay. The cowboy offers the banana to the priest.	cowboy	banana	monk	high	DO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+toss	cowboy tosses the banana to the clown. Okay. The cowboy offers the banana to the priest.	cowboy	banana	clown	high	PO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+throw	The ballerina washes the gun. The artist examines the palette. The ballerina throws the hat to the	ballerina	hat	swimmer	control	DO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+sell	soldier. And the chef sells the book to the doctor. All right. Cool. Thank you. Oh, we got	chef	book	doctor	low	PO	01HN9081CTYEKFBPPTNS235HV2	2b793d45-4a87-4537-a420-ce99b355d534.mp4
+give	Hopefully we just have to give it a second like last time.	pirate	apple	monk	control	DO	01HN9085GWDBCPS51G8M4CJBYX	29efa384-f6c7-4d34-a578-2b97ab205db8.mp4
+give	Oh yeah, it just gave me the same thing.	pirate	apple	monk	control	DO	01HN9085GWDBCPS51G8M4CJBYX	29efa384-f6c7-4d34-a578-2b97ab205db8.mp4
+give	if he doesn't give us full reimbursement.	pirate	apple	monk	control	DO	01HN9085GWDBCPS51G8M4CJBYX	29efa384-f6c7-4d34-a578-2b97ab205db8.mp4
+give	The chef will give the ball to the monk. Yay!	chef	ball	monk	low	PO	01HN90868NYZRNS7G1S1ZDP6KR	d6d2e573-9d6e-4321-8e53-c9d4bff24c3b.mp4
+give	The artist will give the doctor a book. Yeah, alright, good. Offer. Oh, offer. Okay, it was offer. Oops.	chef	ball	monk	low	DO	01HN90868NYZRNS7G1S1ZDP6KR	d6d2e573-9d6e-4321-8e53-c9d4bff24c3b.mp4
+toss	The cowboy will toss the banana to the soldier. Ding ding! Yay!	cowboy	banana	soldier	control	PO	01HN90868NYZRNS7G1S1ZDP6KR	d6d2e573-9d6e-4321-8e53-c9d4bff24c3b.mp4
+sell	The chef would sell the cake.	chef	cake	sailor	control	DO	01HN9086WNF52994Z9BABWK6EG	f74c4565-1681-4f4d-9845-ad8d7f1296b0.mp4
+throw	The cowboy throws the book to the boxer.	cowboy	book	boxer	low	PO	01HN9086WNF52994Z9BABWK6EG	f74c4565-1681-4f4d-9845-ad8d7f1296b0.mp4
+sell	All right, um, the chef sold a book to the doctor.	chef	book	doctor	low	PO	01HN90DZJ3XWJ7FWSXB1MBMYJG	848fdb39-0272-4841-8cd3-02b39e327845.mp4
+toss	Um, next is the cowboy tossed a banana to the hipster.	cowboy	banana	soldier	control	DO	01HN90DZJ3XWJ7FWSXB1MBMYJG	848fdb39-0272-4841-8cd3-02b39e327845.mp4
+throw	The cowboy threw the book at the boxer.	cowboy	book	boxer	low	PO	01HN90DZJ3XWJ7FWSXB1MBMYJG	848fdb39-0272-4841-8cd3-02b39e327845.mp4
+sell	so the cowboy threw the gun to the doctor. Okay? The chef sells the cake to the sailor.	chef	cake	sailor	control	PO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+throw	so the cowboy threw the gun to the doctor. Okay? The chef sells the cake to the sailor.	cowboy	gun	doctor	high	PO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+show	The chef laughs at the burglar. The waitress catches the doctor. The waitress shows an	waitress	apple	clown	control	DO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+offer	bites the apple. It's just moving slow. The artist offers the book to the doctor. And	artist	book	doctor	low	PO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+toss	the cowboy tosses the ball to the clown. And the artist examines the palette. The pirate	cowboy	ball	clown	low	PO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+give	gives an apple to the doctor. And the artist reaches for the cup. Okay. Oh, no, there's	pirate	apple	doctor	high	PO	01HN91HBWDWZQTGM4CQBSBEKJW	e4d4baac-a421-49ac-88a6-de3496173a8e.mp4
+toss	Hello, hello, cowboy toss the ball to the clown.	cowboy	book	soldier	low	DO	01HN91HEH8FED7DJX7696HTSH9	2f37eb1f-13f1-4fee-bee6-8cb3b987ab4f.mp4
+toss	Cowboy toss the ball to the clown.	cowboy	book	soldier	low	DO	01HN91HEH8FED7DJX7696HTSH9	2f37eb1f-13f1-4fee-bee6-8cb3b987ab4f.mp4
+show	It shows it in a different	waitress	banana	doctor	high	DO	01HN91HGGMPQAACGYGC4MM96Q2	0fa39adf-4388-40a6-a8d4-3b18fca707dd.mp4
+sell	The pirate is trying to sell the clown a ball.	pirate	ball	clown	high	DO	01HN91HHVZ3CKVKPJ3T5KY7KZ5	e53088e8-7c04-435e-b146-c268e256b887.mp4
+give	The chef gives the ball to the monk, all right.	chef	ball	monk	low	PO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+throw	All right, um, the cowboy throws the banana to the soldier.	ballerina	hat	swimmer	control	DO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+throw	The ballerina throws the hat to the swimmer.	ballerina	hat	swimmer	control	PO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+toss	Oh, it's toss whoops.	cowboy	banana	soldier	control	DO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+offer	The artist offers the book to the doctor.	artist	book	doctor	low	PO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+show	The waitress shows the doctor the banana.	waitress	banana	doctor	high	DO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+sell	The pirate sells the ball to the clown.	pirate	ball	clown	high	PO	01HN91VB5BVR1ERB55KPEE9ZC0	904f1088-c503-44d1-87dc-8d445fb11879.mp4
+give	Hello, the waitress washed the gun. The chef gave the mung to the boy.	chef	ball	monk	low	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+give	New studies available on Prolific. The chef gave the ball to the mung.	chef	ball	monk	low	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+give	The cowboy gave the ball to the clown. The cowboy tossed the ball to the clown.	chef	ball	monk	low	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+give	The cowboy gave the gun to the doctor. The pirate smiled to the mung.	chef	ball	monk	low	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+give	The waitress ran to the soldier. The chef gave the sailor a cake.	chef	ball	monk	low	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+toss	The cowboy gave the ball to the clown. The cowboy tossed the ball to the clown.	cowboy	ball	clown	low	PO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+show	The waitress caught the doctor. The waitress showed the doctor banana.	waitress	banana	doctor	high	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
+offer	The chef laughed at the sailor. The boy offered an apple to the sailor.	artist	apple	sailor	control	DO	01HN91VHM2PZ1BVF8MNSTXR2JR	76f639e0-4192-4e72-a7ac-d6f3b20d8d30.mp4
